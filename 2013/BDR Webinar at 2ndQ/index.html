@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Introducción a BDR y "logical decoding"</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="copyright" content="Copyright &#169; 2ndQuadrant Limited 2014" />
+<meta name="generator" content="AsciiDoc 8.6.7" />
+<link rel="stylesheet" href="common/asciidoc.css" type="text/css" />
+<link rel="stylesheet" href="common/slidy.css" type="text/css" />
+<script src="common/slidy.js" charset="utf-8" type="text/javascript"></script>
+</head>
+<body class="article">
+<div id="header" class="slide">
+<h1>Introducción a BDR y "logical decoding"</h1>
+<span id="author">AKA Replicación Multi maestro y replicación parcial</span><br />
+</div>
+<div class="sect1 slide">
+<h1 id="_que_es_bdr">¿ Que es BDR ?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Replicación Bi direccional
+</span>
+<ul class="">
+<li>
+<span>
+Hasta 48 nodos.
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+Recomendado para replicar entre áreas geográficas distantes
+</span>
+</li>
+<li>
+<span>
+Asincrónico
+</span>
+</li>
+<li>
+<span>
+Eventualmente consistente
+</span>
+</li>
+<li>
+<span>
+DDL replicado de forma transparente
+</span>
+</li>
+<li>
+<span>
+Licencia PGDG
+</span>
+</li>
+<li>
+<span>
+Compatible con otros sistemas nativos de streaming
+</span>
+</li>
+<li>
+<span>
+Poco overhead
+</span>
+</li>
+<li>
+<span>
+Utiliza logical decoding
+<a href="http://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=b89e151054a05f0f6d356ca52e3b725dd0505e53">http://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=b89e151054a05f0f6d356ca52e3b725dd0505e53</a>
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_estado_del_proyecto">Estado del proyecto</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Ultima versión 0.7.1
+</span>
+</li>
+<li>
+<span>
+Actualmente es un contrib/extensión
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_cuando_precisamos_bdr">¿ Cuando precisamos BDR?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Nodos geográficamente distribuidos.
+</span>
+</li>
+<li>
+<span>
+Bases de datos parcialmente distribuidas.
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_como_funciona">¿ Como funciona ?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Logical decoding
+</span>
+</li>
+<li>
+<span>
+Event triggers
+</span>
+</li>
+<li>
+<span>
+Background workers
+</span>
+</li>
+<li>
+<span>
+DDL deparse para los Event Triggers (upcoming in 9.4)
+</span>
+</li>
+<li>
+<span>
+Sequence AM - distributed
+</span>
+</li>
+<li>
+<span>
+Replication Identifiers, Wal messages, Commit timestamps
+</span>
+</li>
+<li>
+<span>
+Streaming continuara funcionando
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_que_es_udr">¿ Qué es UDR ?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Replicación unidireccional
+</span>
+<ul class="">
+<li>
+<span>
+Replicación utilizando <em>logical streaming</em>
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+No requiere patches. Solo se necesita 9.4 con una extensión.
+</span>
+</li>
+<li>
+<span>
+Se utiliza descodificación lógica
+</span>
+</li>
+<li>
+<span>
+Limitaciones: No es multi maestro, no se replica DDL, secuencias no distribuidas.
+</span>
+</li>
+<li>
+<span>
+Replicación entre versiones diferentes
+</span>
+<ul class="">
+<li>
+<span>
+Permitirá simplificar el proceso de migración
+</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_idea_general">Idea general</h1>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/1.jpg" alt="img/1.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_sharding">Sharding</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Escenario ejemplo:
+</span>
+</li>
+</ul>
+<div class="imageblock">
+<div class="content">
+<img src="img/2.jpg" alt="img/2.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_upstream_downstream">Upstream/Downstream</h1>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/3.jpg" alt="img/3.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_potencial_de_la_replicacion_logica">Potencial de la replicación lógica</h1>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/4.jpg" alt="img/4.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_logical_decoding">Logical decoding</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Esta característica permite traducir el _write-ahead log stream_ en una serie de comandos lógicos (DELETE, UPDATE, INSERT)
+</span>
+</li>
+<li>
+<span>
+Para ver como funciona la API, vea test_decoding
+</span>
+</li>
+<li>
+<span>
+Variables de configuración:
+</span>
+<div class="listingblock">
+<div class="content">
+<pre><tt>+wal_level = logical+
++max_replication_slots = 4+</tt></pre>
+</div></div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_variables_de_configuracion_general">Variables de configuración general</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+shared_preload_libraries = <em>bdr</em>
+</span>
+</li>
+<li>
+<span>
+track_commit_timestamp = on
+</span>
+</li>
+<li>
+<span>
+wal_level = <em>logical</em>
+</span>
+<ul class="">
+<li>
+<span>
+Servers for downstream only, could be set as <em>minimal</em>
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+max_replication_slots = n
+</span>
+</li>
+<li>
+<span>
+max_wal_senders = n
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_variables_de_configuracion_de_bdr">Variables de configuración de BDR</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Variables generales / BDR
+</span>
+<ul class="">
+<li>
+<span>
+bdr.bdr_connections = âserver1, server2, &lt;conname&gt;â
+</span>
+</li>
+<li>
+<span>
+bdr.synchronous_commit on|off
+</span>
+</li>
+<li>
+<span>
+bdr.log_conflicts_to_table
+</span>
+</li>
+<li>
+<span>
+bdr.default_apply_delay / bdr.&lt;conname&gt;_apply_delay
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+Variables per-connection
+</span>
+<ul class="">
+<li>
+<span>
+bdr.&lt;connection_name&gt;_dsn (<em>host=10.1.1.2 user=postgres dbname=replicated_db</em>)
+</span>
+</li>
+<li>
+<span>
+bdr.&lt;connection_name&gt;_apply_delay
+</span>
+</li>
+<li>
+<span>
+bdr.&lt;connection_name&gt;_init_replica on|off (dump consistently de db)
+</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_detalles">Detalles</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Código de aplicación debe estar controlado y limpio.
+</span>
+<ul class="">
+<li>
+<span>
+Puede que no todas las aplicaciones sean compatibles para BDR en este momento.
+</span>
+</li>
+<li>
+<span>
+2ndQuadrant provee servicio de consultoría para este tipo de corroboraciones y soporte.
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+Todas las secuencias deben ser definidas como globales para la aplicación.
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_conflict_handling">Conflict Handling</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Builtin - último update gana
+</span>
+</li>
+<li>
+<span>
+Conflict Handlers definidos por usuario
+</span>
+<ul class="">
+<li>
+<span>
+PLs
+</span>
+</li>
+<li>
+<span>
+Diferentes tipos de conflictos
+</span>
+</li>
+<li>
+<span>
+Acciones posibles: Skip, Keep Local, Keep remote, Returned Tuple, Error
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+Los conflictos (tuples, transactions) pueden ser logrados a una tabla.
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_ddl_transparente">DDL transparente</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Excepciones
+</span>
+<ul class="">
+<li>
+<span>
+No CREATE/ALTER/DROP DATABASE/TABLESPACE/USER
+</span>
+</li>
+<li>
+<span>
+<tt>ALTER TABLE &#8230; ALTER COLUMN &#8230; USING();</tt>
+</span>
+</li>
+<li>
+<span>
+<tt>ALTER COLUMN &#8230; ADD COLUMN &#8230; DEFAULT;</tt>
+</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_inicializacion_del_data">Inicialización del data</h1>
+<div class="sectionbody">
+<div class="paragraph"><p><em>bdr_init_copy ya no existirá</em></p></div>
+<div class="paragraph"><p>Antes de correr bdr_init_copy, corroborar:</p></div>
+<ul class="">
+<li>
+<span>
+La instancia está parada.
+</span>
+</li>
+<li>
+<span>
+La nueva configuración está en su lugar (postgresql.conf y pg_hba.conf con la nueva configuración).
+</span>
+</li>
+<li>
+<span>
+Verificar los mensajes de log en bdr_init_copy_postgres.log.
+</span>
+</li>
+<li>
+<span>
+Si no posee ningún servidor de archivado (o donde almacenes tus WAL), verifica que wal_keep_segments en el origen tenga un valor por encima de los 500.
+</span>
+<ul class="">
+<li>
+<span>
+Usualmente puede suceder que los segmentos sean removidos en el origen, lo que impide la recuperación en el nuevo nodo.
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+Comprueba que tienes suficientes <em>slots</em> de replicación (max_replication_slots).
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_como_se_ve_desde_el_sistema">¿Como se ve desde el sistema?</h1>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre><tt>bin/postgres -D /data/bdr071_2 -c bdr.init_from_basedump=true
+â¦
+\_ postgres: bgworker: bdr: bdrdemo
+\_ postgres: bgworker: bdr (6057338459795280341,2,16384,): bdr9998: apply
+\_ postgres: wal sender process sekondquad [local] idle in transaction
+ bin/postgres -D /data/bdr071_1
+â¦.
+\_ postgres: bgworker: bdr: bdrdemo
+\_ postgres: wal sender process sekondquad [local] idle
+\_ postgres: bgworker: bdr (6057320741290772489,1,16384,): bdr9999: apply</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_referencias">Referencias</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+<a href="http://andres.people.2ndquadrant.com/char14-2014-07-08/bdr.pdf">http://andres.people.2ndquadrant.com/char14-2014-07-08/bdr.pdf</a>
+</span>
+</li>
+<li>
+<span>
+<a href="https://wiki.postgresql.org/wiki/BDR_Quick_Start">https://wiki.postgresql.org/wiki/BDR_Quick_Start</a>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

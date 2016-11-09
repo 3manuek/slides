@@ -1,0 +1,242 @@
+### Started: Sat May  4 23:31:47 UTC 2013
+### Connections: 16 Transactions: 100
+### Sat May  4 23:48:00 UTC 2013 --  23:48:00 up 1 day, 22:43,  2 users,  load average: 1.17, 1.20, 2.56
+tps = 1487.045510 (including connections establishing)
+tps = 1546.948185 (excluding connections establishing)
+### Connections: 16 Transactions: 200
+### Sat May  4 23:48:01 UTC 2013 --  23:48:01 up 1 day, 22:43,  2 users,  load average: 1.17, 1.20, 2.56
+tps = 1617.601935 (including connections establishing)
+tps = 1636.659328 (excluding connections establishing)
+### Connections: 16 Transactions: 300
+### Sat May  4 23:48:03 UTC 2013 --  23:48:03 up 1 day, 22:43,  2 users,  load average: 1.23, 1.21, 2.56
+tps = 1877.974683 (including connections establishing)
+tps = 1896.403057 (excluding connections establishing)
+### Connections: 16 Transactions: 400
+### Sat May  4 23:48:06 UTC 2013 --  23:48:06 up 1 day, 22:43,  2 users,  load average: 1.23, 1.21, 2.56
+tps = 1415.859037 (including connections establishing)
+tps = 1425.964428 (excluding connections establishing)
+### Connections: 16 Transactions: 500
+### Sat May  4 23:48:10 UTC 2013 --  23:48:10 up 1 day, 22:43,  2 users,  load average: 1.85, 1.34, 2.59
+tps = 1388.690470 (including connections establishing)
+tps = 1394.545089 (excluding connections establishing)
+### Connections: 16 Transactions: 600
+### Sat May  4 23:48:16 UTC 2013 --  23:48:16 up 1 day, 22:43,  2 users,  load average: 2.35, 1.45, 2.62
+tps = 1882.831771 (including connections establishing)
+tps = 1891.400791 (excluding connections establishing)
+### Connections: 16 Transactions: 700
+### Sat May  4 23:48:21 UTC 2013 --  23:48:21 up 1 day, 22:43,  2 users,  load average: 3.44, 1.69, 2.69
+tps = 1897.004190 (including connections establishing)
+tps = 1905.999265 (excluding connections establishing)
+### Connections: 16 Transactions: 800
+### Sat May  4 23:48:27 UTC 2013 --  23:48:27 up 1 day, 22:44,  2 users,  load average: 3.56, 1.75, 2.70
+tps = 1771.766322 (including connections establishing)
+tps = 1777.441175 (excluding connections establishing)
+### Connections: 16 Transactions: 900
+### Sat May  4 23:48:35 UTC 2013 --  23:48:35 up 1 day, 22:44,  2 users,  load average: 3.69, 1.84, 2.72
+tps = 1267.711314 (including connections establishing)
+tps = 1270.274020 (excluding connections establishing)
+### Connections: 16 Transactions: 1000
+### Sat May  4 23:48:46 UTC 2013 --  23:48:46 up 1 day, 22:44,  2 users,  load average: 4.03, 1.97, 2.76
+tps = 1785.680007 (including connections establishing)
+tps = 1790.449736 (excluding connections establishing)
+### Connections: 32 Transactions: 100
+### Sat May  4 23:59:40 UTC 2013 --  23:59:40 up 1 day, 22:55,  2 users,  load average: 1.25, 1.30, 2.00
+tps = 1804.698872 (including connections establishing)
+tps = 1875.545538 (excluding connections establishing)
+### Connections: 32 Transactions: 200
+### Sat May  4 23:59:42 UTC 2013 --  23:59:42 up 1 day, 22:55,  2 users,  load average: 1.25, 1.30, 2.00
+tps = 2083.157024 (including connections establishing)
+tps = 2117.922622 (excluding connections establishing)
+### Connections: 32 Transactions: 300
+### Sat May  4 23:59:45 UTC 2013 --  23:59:45 up 1 day, 22:55,  2 users,  load average: 1.63, 1.38, 2.02
+tps = 2160.108599 (including connections establishing)
+tps = 2185.192069 (excluding connections establishing)
+### Connections: 32 Transactions: 400
+### Sat May  4 23:59:50 UTC 2013 --  23:59:50 up 1 day, 22:55,  2 users,  load average: 1.74, 1.41, 2.02
+tps = 1791.672196 (including connections establishing)
+tps = 1802.526403 (excluding connections establishing)
+### Connections: 32 Transactions: 500
+### Sat May  4 23:59:57 UTC 2013 --  23:59:57 up 1 day, 22:55,  2 users,  load average: 2.32, 1.54, 2.06
+tps = 1259.615987 (including connections establishing)
+tps = 1265.118237 (excluding connections establishing)
+### Connections: 32 Transactions: 600
+### Sun May  5 00:00:10 UTC 2013 --  00:00:10 up 1 day, 22:55,  2 users,  load average: 2.96, 1.72, 2.11
+tps = 1997.340832 (including connections establishing)
+tps = 2006.593908 (excluding connections establishing)
+### Connections: 32 Transactions: 700
+### Sun May  5 00:00:19 UTC 2013 --  00:00:19 up 1 day, 22:55,  2 users,  load average: 3.69, 1.91, 2.17
+tps = 2230.558492 (including connections establishing)
+tps = 2243.631205 (excluding connections establishing)
+### Connections: 32 Transactions: 800
+### Sun May  5 00:00:29 UTC 2013 --  00:00:29 up 1 day, 22:56,  2 users,  load average: 3.79, 2.00, 2.20
+tps = 1501.940818 (including connections establishing)
+tps = 1507.091040 (excluding connections establishing)
+### Connections: 32 Transactions: 900
+### Sun May  5 00:00:47 UTC 2013 --  00:00:47 up 1 day, 22:56,  2 users,  load average: 4.81, 2.32, 2.30
+tps = 1717.438748 (including connections establishing)
+tps = 1722.395429 (excluding connections establishing)
+### Connections: 32 Transactions: 1000
+### Sun May  5 00:01:03 UTC 2013 --  00:01:03 up 1 day, 22:56,  2 users,  load average: 4.97, 2.48, 2.35
+tps = 1918.251092 (including connections establishing)
+tps = 1923.480721 (excluding connections establishing)
+### Connections: 48 Transactions: 100
+### Sun May  5 00:08:57 UTC 2013 --  00:08:57 up 1 day, 23:04,  1 user,  load average: 1.05, 1.55, 2.00
+tps = 1810.810311 (including connections establishing)
+tps = 1889.333101 (excluding connections establishing)
+### Connections: 48 Transactions: 200
+### Sun May  5 00:09:00 UTC 2013 --  00:09:00 up 1 day, 23:04,  1 user,  load average: 1.69, 1.67, 2.04
+tps = 2152.892119 (including connections establishing)
+tps = 2190.744845 (excluding connections establishing)
+### Connections: 48 Transactions: 300
+### Sun May  5 00:09:04 UTC 2013 --  00:09:04 up 1 day, 23:04,  1 user,  load average: 2.51, 1.84, 2.10
+tps = 1296.717162 (including connections establishing)
+tps = 1305.453323 (excluding connections establishing)
+### Connections: 48 Transactions: 400
+### Sun May  5 00:09:15 UTC 2013 --  00:09:15 up 1 day, 23:04,  1 user,  load average: 2.75, 1.91, 2.12
+tps = 1951.798704 (including connections establishing)
+tps = 1964.582064 (excluding connections establishing)
+### Connections: 48 Transactions: 500
+### Sun May  5 00:09:25 UTC 2013 --  00:09:25 up 1 day, 23:05,  1 user,  load average: 4.02, 2.21, 2.21
+tps = 2117.336246 (including connections establishing)
+tps = 2133.907781 (excluding connections establishing)
+### Connections: 48 Transactions: 600
+### Sun May  5 00:09:37 UTC 2013 --  00:09:37 up 1 day, 23:05,  1 user,  load average: 6.67, 2.84, 2.42
+tps = 1775.409469 (including connections establishing)
+tps = 1783.879416 (excluding connections establishing)
+### Connections: 48 Transactions: 700
+### Sun May  5 00:09:53 UTC 2013 --  00:09:53 up 1 day, 23:05,  1 user,  load average: 7.98, 3.32, 2.58
+tps = 1709.173976 (including connections establishing)
+tps = 1715.014420 (excluding connections establishing)
+### Connections: 48 Transactions: 800
+### Sun May  5 00:10:13 UTC 2013 --  00:10:13 up 1 day, 23:05,  1 user,  load average: 8.83, 3.85, 2.77
+tps = 1803.430576 (including connections establishing)
+tps = 1809.817838 (excluding connections establishing)
+### Connections: 48 Transactions: 900
+### Sun May  5 00:10:34 UTC 2013 --  00:10:34 up 1 day, 23:06,  1 user,  load average: 9.16, 4.35, 2.97
+tps = 1817.023007 (including connections establishing)
+tps = 1822.379388 (excluding connections establishing)
+### Connections: 48 Transactions: 1000
+### Sun May  5 00:10:58 UTC 2013 --  00:10:58 up 1 day, 23:06,  1 user,  load average: 8.99, 4.61, 3.08
+tps = 1847.716019 (including connections establishing)
+tps = 1853.966497 (excluding connections establishing)
+### Connections: 64 Transactions: 100
+### Sun May  5 00:21:05 UTC 2013 --  00:21:05 up 1 day, 23:16,  1 user,  load average: 1.20, 1.76, 2.35
+tps = 1810.058154 (including connections establishing)
+tps = 1889.849948 (excluding connections establishing)
+### Connections: 64 Transactions: 200
+### Sun May  5 00:21:08 UTC 2013 --  00:21:08 up 1 day, 23:16,  1 user,  load average: 1.20, 1.76, 2.35
+tps = 1580.902891 (including connections establishing)
+tps = 1605.922189 (excluding connections establishing)
+### Connections: 64 Transactions: 300
+### Sun May  5 00:21:17 UTC 2013 --  00:21:17 up 1 day, 23:16,  1 user,  load average: 1.33, 1.77, 2.34
+tps = 1568.860729 (including connections establishing)
+tps = 1584.596272 (excluding connections establishing)
+### Connections: 64 Transactions: 400
+### Sun May  5 00:21:29 UTC 2013 --  00:21:29 up 1 day, 23:17,  1 user,  load average: 2.17, 1.94, 2.39
+tps = 2056.568652 (including connections establishing)
+tps = 2073.738160 (excluding connections establishing)
+### Connections: 64 Transactions: 500
+### Sun May  5 00:21:41 UTC 2013 --  00:21:41 up 1 day, 23:17,  1 user,  load average: 3.69, 2.29, 2.50
+tps = 1811.669484 (including connections establishing)
+tps = 1820.566683 (excluding connections establishing)
+### Connections: 64 Transactions: 600
+### Sun May  5 00:21:59 UTC 2013 --  00:21:59 up 1 day, 23:17,  1 user,  load average: 5.94, 2.85, 2.68
+tps = 1784.149090 (including connections establishing)
+tps = 1791.258115 (excluding connections establishing)
+### Connections: 64 Transactions: 700
+### Sun May  5 00:22:21 UTC 2013 --  00:22:21 up 1 day, 23:17,  1 user,  load average: 8.35, 3.71, 2.97
+tps = 1849.626978 (including connections establishing)
+tps = 1858.014223 (excluding connections establishing)
+### Connections: 64 Transactions: 800
+### Sun May  5 00:22:45 UTC 2013 --  00:22:45 up 1 day, 23:18,  1 user,  load average: 8.02, 4.02, 3.10
+tps = 1909.360922 (including connections establishing)
+tps = 1918.526889 (excluding connections establishing)
+### Connections: 64 Transactions: 900
+### Sun May  5 00:23:12 UTC 2013 --  00:23:12 up 1 day, 23:18,  1 user,  load average: 8.11, 4.38, 3.24
+tps = 1942.887932 (including connections establishing)
+tps = 1949.311901 (excluding connections establishing)
+### Connections: 64 Transactions: 1000
+### Sun May  5 00:23:42 UTC 2013 --  00:23:42 up 1 day, 23:19,  1 user,  load average: 10.86, 5.43, 3.63
+tps = 1658.335861 (including connections establishing)
+tps = 1662.133090 (excluding connections establishing)
+### Connections: 80 Transactions: 100
+### Sun May  5 00:35:41 UTC 2013 --  00:35:41 up 1 day, 23:31,  1 user,  load average: 1.19, 1.72, 2.55
+tps = 1802.325044 (including connections establishing)
+tps = 1879.974884 (excluding connections establishing)
+### Connections: 80 Transactions: 200
+### Sun May  5 00:35:45 UTC 2013 --  00:35:45 up 1 day, 23:31,  1 user,  load average: 1.19, 1.72, 2.55
+tps = 2044.832179 (including connections establishing)
+tps = 2081.554932 (excluding connections establishing)
+### Connections: 80 Transactions: 300
+### Sun May  5 00:35:53 UTC 2013 --  00:35:53 up 1 day, 23:31,  1 user,  load average: 2.03, 1.88, 2.59
+tps = 1467.109065 (including connections establishing)
+tps = 1477.856059 (excluding connections establishing)
+### Connections: 80 Transactions: 400
+### Sun May  5 00:36:09 UTC 2013 --  00:36:09 up 1 day, 23:31,  1 user,  load average: 1.87, 1.85, 2.57
+tps = 2142.836097 (including connections establishing)
+tps = 2162.094122 (excluding connections establishing)
+### Connections: 80 Transactions: 500
+### Sun May  5 00:36:24 UTC 2013 --  00:36:24 up 1 day, 23:32,  1 user,  load average: 3.90, 2.30, 2.70
+tps = 1645.333478 (including connections establishing)
+tps = 1654.222143 (excluding connections establishing)
+### Connections: 80 Transactions: 600
+### Sun May  5 00:36:49 UTC 2013 --  00:36:49 up 1 day, 23:32,  1 user,  load average: 4.70, 2.60, 2.79
+tps = 1896.865150 (including connections establishing)
+tps = 1905.601844 (excluding connections establishing)
+### Connections: 80 Transactions: 700
+### Sun May  5 00:37:14 UTC 2013 --  00:37:14 up 1 day, 23:32,  1 user,  load average: 7.43, 3.38, 3.04
+tps = 1933.385480 (including connections establishing)
+tps = 1941.028319 (excluding connections establishing)
+### Connections: 80 Transactions: 800
+### Sun May  5 00:37:43 UTC 2013 --  00:37:43 up 1 day, 23:33,  1 user,  load average: 8.34, 4.03, 3.27
+tps = 1740.099784 (including connections establishing)
+tps = 1746.519041 (excluding connections establishing)
+### Connections: 80 Transactions: 900
+### Sun May  5 00:38:20 UTC 2013 --  00:38:20 up 1 day, 23:33,  1 user,  load average: 9.31, 4.68, 3.51
+tps = 1821.304435 (including connections establishing)
+tps = 1826.561608 (excluding connections establishing)
+### Connections: 80 Transactions: 1000
+### Sun May  5 00:39:00 UTC 2013 --  00:39:00 up 1 day, 23:34,  1 user,  load average: 9.36, 5.32, 3.78
+tps = 1851.097401 (including connections establishing)
+tps = 1856.913995 (excluding connections establishing)
+### Connections: 96 Transactions: 100
+### Sun May  5 00:53:03 UTC 2013 --  00:53:03 up 1 day, 23:48,  1 user,  load average: 1.21, 1.52, 2.49
+tps = 1595.490081 (including connections establishing)
+tps = 1659.612951 (excluding connections establishing)
+### Connections: 96 Transactions: 200
+### Sun May  5 00:53:09 UTC 2013 --  00:53:09 up 1 day, 23:48,  1 user,  load average: 2.31, 1.74, 2.56
+tps = 1403.950380 (including connections establishing)
+tps = 1420.431426 (excluding connections establishing)
+### Connections: 96 Transactions: 300
+### Sun May  5 00:53:23 UTC 2013 --  00:53:23 up 1 day, 23:48,  1 user,  load average: 3.46, 2.03, 2.64
+tps = 2047.956165 (including connections establishing)
+tps = 2071.494392 (excluding connections establishing)
+### Connections: 96 Transactions: 400
+### Sun May  5 00:53:37 UTC 2013 --  00:53:37 up 1 day, 23:49,  1 user,  load average: 5.02, 2.44, 2.76
+tps = 1731.703560 (including connections establishing)
+tps = 1743.872774 (excluding connections establishing)
+### Connections: 96 Transactions: 500
+### Sun May  5 00:53:59 UTC 2013 --  00:53:59 up 1 day, 23:49,  1 user,  load average: 7.33, 3.12, 2.98
+tps = 1783.652734 (including connections establishing)
+tps = 1794.082382 (excluding connections establishing)
+### Connections: 96 Transactions: 600
+### Sun May  5 00:54:26 UTC 2013 --  00:54:26 up 1 day, 23:50,  1 user,  load average: 9.84, 4.21, 3.35
+tps = 1859.941257 (including connections establishing)
+tps = 1870.183304 (excluding connections establishing)
+### Connections: 96 Transactions: 700
+### Sun May  5 00:54:57 UTC 2013 --  00:54:57 up 1 day, 23:50,  1 user,  load average: 9.10, 4.54, 3.49
+tps = 1708.077072 (including connections establishing)
+tps = 1715.130908 (excluding connections establishing)
+### Connections: 96 Transactions: 800
+### Sun May  5 00:55:37 UTC 2013 --  00:55:37 up 1 day, 23:51,  1 user,  load average: 10.84, 5.56, 3.88
+tps = 1896.167638 (including connections establishing)
+tps = 1903.217617 (excluding connections establishing)
+### Connections: 96 Transactions: 900
+### Sun May  5 00:56:17 UTC 2013 --  00:56:17 up 1 day, 23:51,  1 user,  load average: 12.13, 6.46, 4.25
+tps = 1751.390876 (including connections establishing)
+tps = 1756.123796 (excluding connections establishing)
+### Connections: 96 Transactions: 1000
+### Sun May  5 00:57:07 UTC 2013 --  00:57:07 up 1 day, 23:52,  1 user,  load average: 12.79, 7.50, 4.71
+tps = 1801.325100 (including connections establishing)
+tps = 1806.001628 (excluding connections establishing)
+### 86 minutes

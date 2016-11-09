@@ -1,0 +1,120 @@
+Connections: 16 Transactions: 100
+load average: 1.17, 1.20, 2.56
+Connections: 16 Transactions: 200
+load average: 1.17, 1.20, 2.56
+Connections: 16 Transactions: 300
+load average: 1.23, 1.21, 2.56
+Connections: 16 Transactions: 400
+load average: 1.23, 1.21, 2.56
+Connections: 16 Transactions: 500
+load average: 1.85, 1.34, 2.59
+Connections: 16 Transactions: 600
+load average: 2.35, 1.45, 2.62
+Connections: 16 Transactions: 700
+load average: 3.44, 1.69, 2.69
+Connections: 16 Transactions: 800
+load average: 3.56, 1.75, 2.70
+Connections: 16 Transactions: 900
+load average: 3.69, 1.84, 2.72
+Connections: 16 Transactions: 1000
+load average: 4.03, 1.97, 2.76
+Connections: 32 Transactions: 100
+load average: 1.25, 1.30, 2.00
+Connections: 32 Transactions: 200
+load average: 1.25, 1.30, 2.00
+Connections: 32 Transactions: 300
+load average: 1.63, 1.38, 2.02
+Connections: 32 Transactions: 400
+load average: 1.74, 1.41, 2.02
+Connections: 32 Transactions: 500
+load average: 2.32, 1.54, 2.06
+Connections: 32 Transactions: 600
+load average: 2.96, 1.72, 2.11
+Connections: 32 Transactions: 700
+load average: 3.69, 1.91, 2.17
+Connections: 32 Transactions: 800
+load average: 3.79, 2.00, 2.20
+Connections: 32 Transactions: 900
+load average: 4.81, 2.32, 2.30
+Connections: 32 Transactions: 1000
+load average: 4.97, 2.48, 2.35
+Connections: 48 Transactions: 100
+load average: 1.05, 1.55, 2.00
+Connections: 48 Transactions: 200
+load average: 1.69, 1.67, 2.04
+Connections: 48 Transactions: 300
+load average: 2.51, 1.84, 2.10
+Connections: 48 Transactions: 400
+load average: 2.75, 1.91, 2.12
+Connections: 48 Transactions: 500
+load average: 4.02, 2.21, 2.21
+Connections: 48 Transactions: 600
+load average: 6.67, 2.84, 2.42
+Connections: 48 Transactions: 700
+load average: 7.98, 3.32, 2.58
+Connections: 48 Transactions: 800
+load average: 8.83, 3.85, 2.77
+Connections: 48 Transactions: 900
+load average: 9.16, 4.35, 2.97
+Connections: 48 Transactions: 1000
+load average: 8.99, 4.61, 3.08
+Connections: 64 Transactions: 100
+load average: 1.20, 1.76, 2.35
+Connections: 64 Transactions: 200
+load average: 1.20, 1.76, 2.35
+Connections: 64 Transactions: 300
+load average: 1.33, 1.77, 2.34
+Connections: 64 Transactions: 400
+load average: 2.17, 1.94, 2.39
+Connections: 64 Transactions: 500
+load average: 3.69, 2.29, 2.50
+Connections: 64 Transactions: 600
+load average: 5.94, 2.85, 2.68
+Connections: 64 Transactions: 700
+load average: 8.35, 3.71, 2.97
+Connections: 64 Transactions: 800
+load average: 8.02, 4.02, 3.10
+Connections: 64 Transactions: 900
+load average: 8.11, 4.38, 3.24
+Connections: 64 Transactions: 1000
+load average: 10.86, 5.43, 3.63
+Connections: 80 Transactions: 100
+load average: 1.19, 1.72, 2.55
+Connections: 80 Transactions: 200
+load average: 1.19, 1.72, 2.55
+Connections: 80 Transactions: 300
+load average: 2.03, 1.88, 2.59
+Connections: 80 Transactions: 400
+load average: 1.87, 1.85, 2.57
+Connections: 80 Transactions: 500
+load average: 3.90, 2.30, 2.70
+Connections: 80 Transactions: 600
+load average: 4.70, 2.60, 2.79
+Connections: 80 Transactions: 700
+load average: 7.43, 3.38, 3.04
+Connections: 80 Transactions: 800
+load average: 8.34, 4.03, 3.27
+Connections: 80 Transactions: 900
+load average: 9.31, 4.68, 3.51
+Connections: 80 Transactions: 1000
+load average: 9.36, 5.32, 3.78
+Connections: 96 Transactions: 100
+load average: 1.21, 1.52, 2.49
+Connections: 96 Transactions: 200
+load average: 2.31, 1.74, 2.56
+Connections: 96 Transactions: 300
+load average: 3.46, 2.03, 2.64
+Connections: 96 Transactions: 400
+load average: 5.02, 2.44, 2.76
+Connections: 96 Transactions: 500
+load average: 7.33, 3.12, 2.98
+Connections: 96 Transactions: 600
+load average: 9.84, 4.21, 3.35
+Connections: 96 Transactions: 700
+load average: 9.10, 4.54, 3.49
+Connections: 96 Transactions: 800
+load average: 10.84, 5.56, 3.88
+Connections: 96 Transactions: 900
+load average: 12.13, 6.46, 4.25
+Connections: 96 Transactions: 1000
+load average: 12.79, 7.50, 4.71

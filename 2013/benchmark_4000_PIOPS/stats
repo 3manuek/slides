@@ -1,0 +1,30 @@
+pgsql_1_vol
+===========
+
+root@ip-172-31-27-193:~# dd if=/dev/zero of=/mnt/benchmark/test.io bs=8192 count=10000
+10000+0 records in
+10000+0 records out
+81920000 bytes (82 MB) copied, 1.39804 s, 58.6 MB/s
+root@ip-172-31-27-193:~# dd if=/dev/zero of=/mnt/benchmark/test.io bs=8192 count=10000 oflag=direct
+10000+0 records in
+10000+0 records out
+81920000 bytes (82 MB) copied, 11.5303 s, 7.1 MB/s
+
+
+
+pgsql_2_vol
+===========
+
+root@ip-172-31-25-212:~# dd if=/dev/zero of=/mnt/benchmark/test.io bs=8192 count=10000
+10000+0 records in
+10000+0 records out
+81920000 bytes (82 MB) copied, 0.697294 s, 117 MB/s
+root@ip-172-31-25-212:~# dd if=/dev/zero of=/mnt/benchmark/test.io bs=8192 count=10000 oflag=direct
+10000+0 records in
+10000+0 records out
+81920000 bytes (82 MB) copied, 7.89467 s, 10.4 MB/s
+
+
+avg:
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+md0            2576.13     14978.56     21446.79 1430503785 2048242035

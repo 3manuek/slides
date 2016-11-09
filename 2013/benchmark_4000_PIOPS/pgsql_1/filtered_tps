@@ -1,0 +1,180 @@
+### Connections: 16 Transactions: 100
+tps = 1455.306183 (including connections establishing)
+tps = 1504.333067 (excluding connections establishing)
+### Connections: 16 Transactions: 200
+tps = 1283.243012 (including connections establishing)
+tps = 1302.011149 (excluding connections establishing)
+### Connections: 16 Transactions: 300
+tps = 1183.880578 (including connections establishing)
+tps = 1195.080823 (excluding connections establishing)
+### Connections: 16 Transactions: 400
+tps = 653.162465 (including connections establishing)
+tps = 655.553331 (excluding connections establishing)
+### Connections: 16 Transactions: 500
+tps = 1197.427327 (including connections establishing)
+tps = 1203.416454 (excluding connections establishing)
+### Connections: 16 Transactions: 600
+tps = 533.038237 (including connections establishing)
+tps = 534.108176 (excluding connections establishing)
+### Connections: 16 Transactions: 700
+tps = 631.148272 (including connections establishing)
+tps = 632.361516 (excluding connections establishing)
+### Connections: 16 Transactions: 800
+tps = 1009.549232 (including connections establishing)
+tps = 1012.337648 (excluding connections establishing)
+### Connections: 16 Transactions: 900
+tps = 923.809694 (including connections establishing)
+tps = 926.052550 (excluding connections establishing)
+### Connections: 16 Transactions: 1000
+tps = 648.084281 (including connections establishing)
+tps = 649.025840 (excluding connections establishing)
+### Connections: 32 Transactions: 100
+tps = 1500.843052 (including connections establishing)
+tps = 1571.936223 (excluding connections establishing)
+### Connections: 32 Transactions: 200
+tps = 1242.861315 (including connections establishing)
+tps = 1262.173441 (excluding connections establishing)
+### Connections: 32 Transactions: 300
+tps = 1232.842461 (including connections establishing)
+tps = 1244.173647 (excluding connections establishing)
+### Connections: 32 Transactions: 400
+tps = 757.996433 (including connections establishing)
+tps = 761.571325 (excluding connections establishing)
+### Connections: 32 Transactions: 500
+tps = 747.301075 (including connections establishing)
+tps = 749.705738 (excluding connections establishing)
+### Connections: 32 Transactions: 600
+tps = 630.246536 (including connections establishing)
+tps = 631.797323 (excluding connections establishing)
+### Connections: 32 Transactions: 700
+tps = 1067.173828 (including connections establishing)
+tps = 1070.765903 (excluding connections establishing)
+### Connections: 32 Transactions: 800
+tps = 665.884530 (including connections establishing)
+tps = 667.250250 (excluding connections establishing)
+### Connections: 32 Transactions: 900
+tps = 688.139075 (including connections establishing)
+tps = 689.431058 (excluding connections establishing)
+### Connections: 32 Transactions: 1000
+tps = 709.412572 (including connections establishing)
+tps = 710.699032 (excluding connections establishing)
+### Connections: 48 Transactions: 100
+tps = 281.765774 (including connections establishing)
+tps = 283.716378 (excluding connections establishing)
+### Connections: 48 Transactions: 200
+tps = 864.821312 (including connections establishing)
+tps = 875.207591 (excluding connections establishing)
+### Connections: 48 Transactions: 300
+tps = 899.659872 (including connections establishing)
+tps = 906.043109 (excluding connections establishing)
+### Connections: 48 Transactions: 400
+tps = 705.544081 (including connections establishing)
+tps = 708.437573 (excluding connections establishing)
+### Connections: 48 Transactions: 500
+tps = 1029.074793 (including connections establishing)
+tps = 1033.702191 (excluding connections establishing)
+### Connections: 48 Transactions: 600
+tps = 749.498441 (including connections establishing)
+tps = 751.638602 (excluding connections establishing)
+### Connections: 48 Transactions: 700
+tps = 736.165011 (including connections establishing)
+tps = 738.179343 (excluding connections establishing)
+### Connections: 48 Transactions: 800
+tps = 593.332885 (including connections establishing)
+tps = 594.427109 (excluding connections establishing)
+### Connections: 48 Transactions: 900
+tps = 766.233467 (including connections establishing)
+tps = 767.930265 (excluding connections establishing)
+### Connections: 48 Transactions: 1000
+tps = 641.089853 (including connections establishing)
+tps = 642.056397 (excluding connections establishing)
+### Connections: 64 Transactions: 100
+tps = 944.743014 (including connections establishing)
+tps = 967.161724 (excluding connections establishing)
+### Connections: 64 Transactions: 200
+tps = 1281.538487 (including connections establishing)
+tps = 1301.615870 (excluding connections establishing)
+### Connections: 64 Transactions: 300
+tps = 704.684131 (including connections establishing)
+tps = 709.229695 (excluding connections establishing)
+### Connections: 64 Transactions: 400
+tps = 1010.879033 (including connections establishing)
+tps = 1017.801963 (excluding connections establishing)
+### Connections: 64 Transactions: 500
+tps = 739.570935 (including connections establishing)
+tps = 742.274431 (excluding connections establishing)
+### Connections: 64 Transactions: 600
+tps = 596.805394 (including connections establishing)
+tps = 598.288929 (excluding connections establishing)
+### Connections: 64 Transactions: 700
+tps = 778.112745 (including connections establishing)
+tps = 780.151596 (excluding connections establishing)
+### Connections: 64 Transactions: 800
+tps = 662.930587 (including connections establishing)
+tps = 664.242148 (excluding connections establishing)
+### Connections: 64 Transactions: 900
+tps = 820.276541 (including connections establishing)
+tps = 822.272877 (excluding connections establishing)
+### Connections: 64 Transactions: 1000
+tps = 612.027076 (including connections establishing)
+tps = 612.899746 (excluding connections establishing)
+### Connections: 80 Transactions: 100
+tps = 815.849924 (including connections establishing)
+tps = 832.940680 (excluding connections establishing)
+### Connections: 80 Transactions: 200
+tps = 893.581333 (including connections establishing)
+tps = 903.505640 (excluding connections establishing)
+### Connections: 80 Transactions: 300
+tps = 1055.960216 (including connections establishing)
+tps = 1064.785569 (excluding connections establishing)
+### Connections: 80 Transactions: 400
+tps = 809.306274 (including connections establishing)
+tps = 813.366432 (excluding connections establishing)
+### Connections: 80 Transactions: 500
+tps = 597.728301 (including connections establishing)
+tps = 599.581524 (excluding connections establishing)
+### Connections: 80 Transactions: 600
+tps = 801.169989 (including connections establishing)
+tps = 804.267217 (excluding connections establishing)
+### Connections: 80 Transactions: 700
+tps = 684.673783 (including connections establishing)
+tps = 686.561168 (excluding connections establishing)
+### Connections: 80 Transactions: 800
+tps = 708.382297 (including connections establishing)
+tps = 710.011067 (excluding connections establishing)
+### Connections: 80 Transactions: 900
+tps = 736.125055 (including connections establishing)
+tps = 737.435595 (excluding connections establishing)
+### Connections: 80 Transactions: 1000
+tps = 663.399419 (including connections establishing)
+tps = 664.397391 (excluding connections establishing)
+### Connections: 96 Transactions: 100
+tps = 939.636664 (including connections establishing)
+tps = 964.251675 (excluding connections establishing)
+### Connections: 96 Transactions: 200
+tps = 889.747908 (including connections establishing)
+tps = 899.859720 (excluding connections establishing)
+### Connections: 96 Transactions: 300
+tps = 774.214277 (including connections establishing)
+tps = 778.469896 (excluding connections establishing)
+### Connections: 96 Transactions: 400
+tps = 772.933558 (including connections establishing)
+tps = 776.699881 (excluding connections establishing)
+### Connections: 96 Transactions: 500
+tps = 798.993242 (including connections establishing)
+tps = 801.922308 (excluding connections establishing)
+### Connections: 96 Transactions: 600
+tps = 682.694419 (including connections establishing)
+tps = 684.767479 (excluding connections establishing)
+### Connections: 96 Transactions: 700
+tps = 725.264506 (including connections establishing)
+tps = 727.140162 (excluding connections establishing)
+### Connections: 96 Transactions: 800
+tps = 662.142960 (including connections establishing)
+tps = 663.725824 (excluding connections establishing)
+### Connections: 96 Transactions: 900
+tps = 776.810711 (including connections establishing)
+tps = 778.465426 (excluding connections establishing)
+### Connections: 96 Transactions: 1000
+tps = 708.634612 (including connections establishing)
+tps = 710.007283 (excluding connections establishing)

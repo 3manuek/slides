@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>BDR</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="copyright" content="Copyright &#169; 2ndQuadrant Limited 2014" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<link rel="stylesheet" href="common/asciidoc.css" type="text/css" />
+<link rel="stylesheet" href="common/slidy.css" type="text/css" />
+<script src="common/slidy.js" charset="utf-8" type="text/javascript"></script>
+</head>
+<body class="article">
+<div id="header" class="slide">
+<h1>BDR</h1>
+</div>
+<div class="sect1 slide">
+<h1 id="_o_que_o_bdr">O que o BDR ?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Replicação bidirecion
+</span>
+<ul class="">
+<li>
+<span>
+Até <strong>48</strong> nós de mestre-mestre.
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+Recomendado para replicar entre áreas geográficas distante
+</span>
+</li>
+<li>
+<span>
+Asynchronous
+</span>
+</li>
+<li>
+<span>
+Eventualmente consistente
+</span>
+</li>
+<li>
+<span>
+DDL é replicado de forma transparente
+</span>
+</li>
+<li>
+<span>
+Licencia PGDG
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_status_atual_do_projeto">Status atual do projeto</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Ultima versão do RPM:0.7.1
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_quando_precisamos_bdr">¿ Quando precisamos BDR?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Nós geograficamente distribuídos.
+</span>
+</li>
+<li>
+<span>
+Bancos de dados parcialmente distribuídos
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_como_funciona">¿ Como funciona ?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Logical decoding
+</span>
+</li>
+<li>
+<span>
+Event triggers
+</span>
+</li>
+<li>
+<span>
+Background workers
+</span>
+</li>
+<li>
+<span>
+DDL deparse for Event Triggers (upcoming in 9.4)
+</span>
+</li>
+<li>
+<span>
+Sequence AM - distributed
+</span>
+</li>
+<li>
+<span>
+Replication Identifiers, Wal messages, Commit timestamps
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_que_es_udr">Que es UDR?</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Replicação unidirecional
+</span>
+</li>
+<li>
+<span>
+Não requer patches. Apenas 9,4 com uma extensão.
+</span>
+</li>
+<li>
+<span>
+Use decodificação lógica
+</span>
+</li>
+<li>
+<span>
+Algumas limitações: Não Multi mestre, sem replicação DDL, as sequências não distribuídos.
+</span>
+</li>
+<li>
+<span>
+Suporta replicação cruzada versão
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_detalhes">Detalhes</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Código de aplicação controlado e limpo.
+</span>
+</li>
+<li>
+<span>
+Als odes seqüências devem ser definidos como globais para a aplicação.
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_ddl_transparente">DDL transparente</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+Exceções
+</span>
+<ul class="">
+<li>
+<span>
+No CREATE/ALTER/DROP DATABASE/TABLESPACE/USER
+</span>
+</li>
+<li>
+<span>
+ALTER TABLE &#8230; ALTER COLUMN &#8230; USING();
+</span>
+</li>
+<li>
+<span>
+ALTER COLUMN &#8230; ADD COLUMN &#8230; DEFAULT;
+</span>
+</li>
+</ul>
+</li>
+</ul>
+<div class="imageblock">
+<div class="content">
+<img src="img/example.png" alt="img/example.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_referencias">Referencias</h1>
+<div class="sectionbody">
+<ul class="">
+<li>
+<span>
+<a href="http://andres.people.2ndquadrant.com/char14-2014-07-08/bdr.pdf">http://andres.people.2ndquadrant.com/char14-2014-07-08/bdr.pdf</a>
+</span>
+</li>
+<li>
+<span>
+<a href="https://wiki.postgresql.org/wiki/BDR_Quick_Start">https://wiki.postgresql.org/wiki/BDR_Quick_Start</a>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

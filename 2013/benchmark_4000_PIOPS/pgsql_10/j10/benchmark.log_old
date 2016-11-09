@@ -1,0 +1,1565 @@
+### Started: Tue May  7 17:53:02 UTC 2013
+### Connections: 16 Transactions: 100
+### Tue May  7 17:53:02 UTC 2013 --  17:53:02 up 22:43,  3 users,  load average: 0.00, 0.01, 0.05
+### Started: Tue May  7 17:54:04 UTC 2013
+### Connections: 16 Transactions: 100
+### Tue May  7 17:57:21 UTC 2013 --  17:57:21 up 22:48,  2 users,  load average: 0.00, 0.01, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 100
+number of transactions actually processed: 1600/1600
+tps = 739.972677 (including connections establishing)
+tps = 787.221138 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003723	\set nbranches 1 * :scale
+	0.001859	\set ntellers 10 * :scale
+	0.001866	\set naccounts 100000 * :scale
+	0.002107	\setrandom aid 1 :naccounts
+	0.001734	\setrandom bid 1 :nbranches
+	0.001743	\setrandom tid 1 :ntellers
+	0.001703	\setrandom delta -5000 5000
+	2.237961	BEGIN;
+	2.974217	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.316614	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.406179	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.373671	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.312969	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.480436	END;
+### Connections: 16 Transactions: 200
+### Tue May  7 17:57:23 UTC 2013 --  17:57:23 up 22:48,  2 users,  load average: 0.00, 0.01, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 200
+number of transactions actually processed: 3200/3200
+tps = 766.959573 (including connections establishing)
+tps = 791.759956 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003611	\set nbranches 1 * :scale
+	0.001836	\set ntellers 10 * :scale
+	0.001896	\set naccounts 100000 * :scale
+	0.002044	\setrandom aid 1 :naccounts
+	0.001765	\setrandom bid 1 :nbranches
+	0.001762	\setrandom tid 1 :ntellers
+	0.001698	\setrandom delta -5000 5000
+	2.239629	BEGIN;
+	2.946995	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.323274	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.387088	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.378616	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.310142	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.523015	END;
+### Connections: 16 Transactions: 300
+### Tue May  7 17:57:27 UTC 2013 --  17:57:27 up 22:48,  2 users,  load average: 0.00, 0.01, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 300
+number of transactions actually processed: 4800/4800
+tps = 786.956975 (including connections establishing)
+tps = 804.300056 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003676	\set nbranches 1 * :scale
+	0.001788	\set ntellers 10 * :scale
+	0.001777	\set naccounts 100000 * :scale
+	0.002019	\setrandom aid 1 :naccounts
+	0.001654	\setrandom bid 1 :nbranches
+	0.001688	\setrandom tid 1 :ntellers
+	0.001665	\setrandom delta -5000 5000
+	2.219949	BEGIN;
+	2.916006	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.320634	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.379706	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.369062	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.306618	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.245286	END;
+### Connections: 16 Transactions: 400
+### Tue May  7 17:57:34 UTC 2013 --  17:57:34 up 22:48,  2 users,  load average: 0.00, 0.01, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 400
+number of transactions actually processed: 6400/6400
+tps = 779.002286 (including connections establishing)
+tps = 791.796714 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003660	\set nbranches 1 * :scale
+	0.001714	\set ntellers 10 * :scale
+	0.001768	\set naccounts 100000 * :scale
+	0.002012	\setrandom aid 1 :naccounts
+	0.001694	\setrandom bid 1 :nbranches
+	0.001753	\setrandom tid 1 :ntellers
+	0.001681	\setrandom delta -5000 5000
+	2.224993	BEGIN;
+	2.925290	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.321151	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.385073	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.353563	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.310365	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.559073	END;
+### Connections: 16 Transactions: 500
+### Tue May  7 17:57:42 UTC 2013 --  17:57:42 up 22:48,  2 users,  load average: 0.16, 0.05, 0.06
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 500
+number of transactions actually processed: 8000/8000
+tps = 793.771277 (including connections establishing)
+tps = 804.086044 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003693	\set nbranches 1 * :scale
+	0.001852	\set ntellers 10 * :scale
+	0.001868	\set naccounts 100000 * :scale
+	0.002073	\setrandom aid 1 :naccounts
+	0.001774	\setrandom bid 1 :nbranches
+	0.001740	\setrandom tid 1 :ntellers
+	0.001726	\setrandom delta -5000 5000
+	2.231413	BEGIN;
+	2.932118	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.329184	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.391856	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.363686	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.321321	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.209551	END;
+### Connections: 16 Transactions: 600
+### Tue May  7 17:57:52 UTC 2013 --  17:57:52 up 22:48,  2 users,  load average: 0.14, 0.05, 0.06
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 600
+number of transactions actually processed: 9600/9600
+tps = 785.685723 (including connections establishing)
+tps = 793.914497 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003852	\set nbranches 1 * :scale
+	0.001861	\set ntellers 10 * :scale
+	0.001828	\set naccounts 100000 * :scale
+	0.002162	\setrandom aid 1 :naccounts
+	0.001826	\setrandom bid 1 :nbranches
+	0.001771	\setrandom tid 1 :ntellers
+	0.001726	\setrandom delta -5000 5000
+	2.233343	BEGIN;
+	2.934099	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.330130	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.392041	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.370019	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.316362	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.437957	END;
+### Connections: 16 Transactions: 700
+### Tue May  7 17:58:04 UTC 2013 --  17:58:04 up 22:48,  2 users,  load average: 0.25, 0.08, 0.06
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 700
+number of transactions actually processed: 11200/11200
+tps = 791.964670 (including connections establishing)
+tps = 799.784744 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003762	\set nbranches 1 * :scale
+	0.001737	\set ntellers 10 * :scale
+	0.001674	\set naccounts 100000 * :scale
+	0.001994	\setrandom aid 1 :naccounts
+	0.001711	\setrandom bid 1 :nbranches
+	0.001700	\setrandom tid 1 :ntellers
+	0.001630	\setrandom delta -5000 5000
+	2.229051	BEGIN;
+	2.917686	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.321120	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.384596	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.366641	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.312722	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.379763	END;
+### Connections: 16 Transactions: 800
+### Tue May  7 17:58:19 UTC 2013 --  17:58:19 up 22:49,  2 users,  load average: 0.20, 0.07, 0.06
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 800
+number of transactions actually processed: 12800/12800
+tps = 699.982134 (including connections establishing)
+tps = 704.828738 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003703	\set nbranches 1 * :scale
+	0.001920	\set ntellers 10 * :scale
+	0.001887	\set naccounts 100000 * :scale
+	0.002075	\setrandom aid 1 :naccounts
+	0.001794	\setrandom bid 1 :nbranches
+	0.001801	\setrandom tid 1 :ntellers
+	0.001725	\setrandom delta -5000 5000
+	2.258796	BEGIN;
+	3.069509	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.326137	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.385485	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.350421	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.314094	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	7.904195	END;
+### Connections: 16 Transactions: 900
+### Tue May  7 17:58:37 UTC 2013 --  17:58:37 up 22:49,  2 users,  load average: 0.15, 0.07, 0.06
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 900
+number of transactions actually processed: 14400/14400
+tps = 834.703397 (including connections establishing)
+tps = 841.083629 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003750	\set nbranches 1 * :scale
+	0.001822	\set ntellers 10 * :scale
+	0.001769	\set naccounts 100000 * :scale
+	0.002060	\setrandom aid 1 :naccounts
+	0.001739	\setrandom bid 1 :nbranches
+	0.001724	\setrandom tid 1 :ntellers
+	0.001687	\setrandom delta -5000 5000
+	2.215389	BEGIN;
+	2.901474	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.309856	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.376338	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.339577	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.301980	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	4.469758	END;
+### Connections: 16 Transactions: 1000
+### Tue May  7 17:58:54 UTC 2013 --  17:58:54 up 22:49,  2 users,  load average: 0.11, 0.06, 0.06
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 16
+number of threads: 4
+number of transactions per client: 1000
+number of transactions actually processed: 16000/16000
+tps = 730.924860 (including connections establishing)
+tps = 735.320999 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003670	\set nbranches 1 * :scale
+	0.001742	\set ntellers 10 * :scale
+	0.001666	\set naccounts 100000 * :scale
+	0.002022	\setrandom aid 1 :naccounts
+	0.001697	\setrandom bid 1 :nbranches
+	0.001792	\setrandom tid 1 :ntellers
+	0.001628	\setrandom delta -5000 5000
+	2.235466	BEGIN;
+	3.117636	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.337349	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.397443	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.361901	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.319045	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	6.916147	END;
+### Connections: 32 Transactions: 100
+### Tue May  7 18:01:49 UTC 2013 --  18:01:49 up 22:52,  2 users,  load average: 0.01, 0.04, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 100
+number of transactions actually processed: 3200/3200
+tps = 1273.434680 (including connections establishing)
+tps = 1418.215920 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003376	\set nbranches 1 * :scale
+	0.001713	\set ntellers 10 * :scale
+	0.001777	\set naccounts 100000 * :scale
+	0.002071	\setrandom aid 1 :naccounts
+	0.001966	\setrandom bid 1 :nbranches
+	0.001868	\setrandom tid 1 :ntellers
+	0.001698	\setrandom delta -5000 5000
+	2.338017	BEGIN;
+	3.713881	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.392705	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.477375	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.432683	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.356467	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	6.258107	END;
+### Connections: 32 Transactions: 200
+### Tue May  7 18:01:52 UTC 2013 --  18:01:52 up 22:52,  2 users,  load average: 0.01, 0.04, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 200
+number of transactions actually processed: 6400/6400
+tps = 1346.801630 (including connections establishing)
+tps = 1421.838326 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003341	\set nbranches 1 * :scale
+	0.001728	\set ntellers 10 * :scale
+	0.001815	\set naccounts 100000 * :scale
+	0.002027	\setrandom aid 1 :naccounts
+	0.001791	\setrandom bid 1 :nbranches
+	0.001939	\setrandom tid 1 :ntellers
+	0.001717	\setrandom delta -5000 5000
+	2.312809	BEGIN;
+	3.699041	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.409593	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.456641	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.440286	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.358282	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	6.539949	END;
+### Connections: 32 Transactions: 300
+### Tue May  7 18:01:57 UTC 2013 --  18:01:57 up 22:52,  2 users,  load average: 0.01, 0.04, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 300
+number of transactions actually processed: 9600/9600
+tps = 1234.965739 (including connections establishing)
+tps = 1278.061351 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003440	\set nbranches 1 * :scale
+	0.001806	\set ntellers 10 * :scale
+	0.001982	\set naccounts 100000 * :scale
+	0.002194	\setrandom aid 1 :naccounts
+	0.001745	\setrandom bid 1 :nbranches
+	0.002030	\setrandom tid 1 :ntellers
+	0.001722	\setrandom delta -5000 5000
+	2.363234	BEGIN;
+	3.909896	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.405607	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.459608	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.433754	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.362122	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	8.295077	END;
+### Connections: 32 Transactions: 400
+### Tue May  7 18:02:05 UTC 2013 --  18:02:05 up 22:52,  2 users,  load average: 0.00, 0.04, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 400
+number of transactions actually processed: 12800/12800
+tps = 1173.221907 (including connections establishing)
+tps = 1204.076051 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003530	\set nbranches 1 * :scale
+	0.001894	\set ntellers 10 * :scale
+	0.001881	\set naccounts 100000 * :scale
+	0.002107	\setrandom aid 1 :naccounts
+	0.001781	\setrandom bid 1 :nbranches
+	0.001824	\setrandom tid 1 :ntellers
+	0.001745	\setrandom delta -5000 5000
+	2.319985	BEGIN;
+	3.921603	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.546228	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.537267	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.453150	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.354343	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	10.215474	END;
+### Connections: 32 Transactions: 500
+### Tue May  7 18:02:16 UTC 2013 --  18:02:16 up 22:53,  2 users,  load average: 0.08, 0.05, 0.05
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 500
+number of transactions actually processed: 16000/16000
+tps = 1151.896154 (including connections establishing)
+tps = 1172.816231 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003681	\set nbranches 1 * :scale
+	0.001936	\set ntellers 10 * :scale
+	0.001982	\set naccounts 100000 * :scale
+	0.002233	\setrandom aid 1 :naccounts
+	0.001939	\setrandom bid 1 :nbranches
+	0.001855	\setrandom tid 1 :ntellers
+	0.001840	\setrandom delta -5000 5000
+	2.340019	BEGIN;
+	3.788965	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.413730	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.463902	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.437091	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.373976	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	11.254095	END;
+### Connections: 32 Transactions: 600
+### Tue May  7 18:02:30 UTC 2013 --  18:02:30 up 22:53,  2 users,  load average: 0.20, 0.08, 0.06
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 600
+number of transactions actually processed: 19200/19200
+tps = 1159.707836 (including connections establishing)
+tps = 1178.650659 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003437	\set nbranches 1 * :scale
+	0.001971	\set ntellers 10 * :scale
+	0.002026	\set naccounts 100000 * :scale
+	0.002240	\setrandom aid 1 :naccounts
+	0.001990	\setrandom bid 1 :nbranches
+	0.001893	\setrandom tid 1 :ntellers
+	0.001868	\setrandom delta -5000 5000
+	2.330893	BEGIN;
+	4.044362	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.407736	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.443366	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.433591	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.374565	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	10.953533	END;
+### Connections: 32 Transactions: 700
+### Tue May  7 18:02:46 UTC 2013 --  18:02:46 up 22:53,  2 users,  load average: 0.37, 0.12, 0.07
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 700
+number of transactions actually processed: 22400/22400
+tps = 1235.979359 (including connections establishing)
+tps = 1253.007515 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003390	\set nbranches 1 * :scale
+	0.001898	\set ntellers 10 * :scale
+	0.002027	\set naccounts 100000 * :scale
+	0.002102	\setrandom aid 1 :naccounts
+	0.001846	\setrandom bid 1 :nbranches
+	0.002040	\setrandom tid 1 :ntellers
+	0.001758	\setrandom delta -5000 5000
+	2.331393	BEGIN;
+	3.736900	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.407613	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.450762	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.505581	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.540865	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	9.387148	END;
+### Connections: 32 Transactions: 800
+### Tue May  7 18:03:05 UTC 2013 --  18:03:05 up 22:53,  2 users,  load average: 0.51, 0.17, 0.09
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 800
+number of transactions actually processed: 25600/25600
+tps = 1327.211295 (including connections establishing)
+tps = 1345.019945 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003702	\set nbranches 1 * :scale
+	0.001808	\set ntellers 10 * :scale
+	0.001781	\set naccounts 100000 * :scale
+	0.002235	\setrandom aid 1 :naccounts
+	0.001983	\setrandom bid 1 :nbranches
+	0.001829	\setrandom tid 1 :ntellers
+	0.001725	\setrandom delta -5000 5000
+	2.319811	BEGIN;
+	3.517413	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.410739	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.456392	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.447041	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.368618	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	8.108766	END;
+### Connections: 32 Transactions: 900
+### Tue May  7 18:03:24 UTC 2013 --  18:03:24 up 22:54,  2 users,  load average: 0.67, 0.22, 0.11
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 900
+number of transactions actually processed: 28800/28800
+tps = 1428.355475 (including connections establishing)
+tps = 1446.575063 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003704	\set nbranches 1 * :scale
+	0.001856	\set ntellers 10 * :scale
+	0.001878	\set naccounts 100000 * :scale
+	0.002128	\setrandom aid 1 :naccounts
+	0.001899	\setrandom bid 1 :nbranches
+	0.001863	\setrandom tid 1 :ntellers
+	0.001716	\setrandom delta -5000 5000
+	2.301384	BEGIN;
+	3.370114	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.391638	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.440302	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.418643	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.364510	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	6.659351	END;
+### Connections: 32 Transactions: 1000
+### Tue May  7 18:03:44 UTC 2013 --  18:03:44 up 22:54,  2 users,  load average: 0.86, 0.29, 0.13
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 32
+number of threads: 4
+number of transactions per client: 1000
+number of transactions actually processed: 32000/32000
+tps = 1399.145035 (including connections establishing)
+tps = 1415.892851 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003829	\set nbranches 1 * :scale
+	0.001888	\set ntellers 10 * :scale
+	0.001969	\set naccounts 100000 * :scale
+	0.002110	\setrandom aid 1 :naccounts
+	0.001805	\setrandom bid 1 :nbranches
+	0.001798	\setrandom tid 1 :ntellers
+	0.001734	\setrandom delta -5000 5000
+	2.302052	BEGIN;
+	3.337203	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.393079	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.444247	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.452103	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.363869	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	7.085838	END;
+### Connections: 48 Transactions: 100
+### Tue May  7 18:11:37 UTC 2013 --  18:11:37 up 23:02,  2 users,  load average: 0.01, 0.09, 0.11
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 100
+number of transactions actually processed: 4800/4800
+tps = 718.783136 (including connections establishing)
+tps = 762.233067 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003800	\set nbranches 1 * :scale
+	0.001876	\set ntellers 10 * :scale
+	0.001857	\set naccounts 100000 * :scale
+	0.002183	\setrandom aid 1 :naccounts
+	0.001810	\setrandom bid 1 :nbranches
+	0.003860	\setrandom tid 1 :ntellers
+	0.001745	\setrandom delta -5000 5000
+	2.555634	BEGIN;
+	5.808968	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.614532	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.684726	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.667564	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.511645	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	43.130765	END;
+### Connections: 48 Transactions: 200
+### Tue May  7 18:11:44 UTC 2013 --  18:11:44 up 23:02,  2 users,  load average: 0.01, 0.08, 0.10
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 200
+number of transactions actually processed: 9600/9600
+tps = 1881.123940 (including connections establishing)
+tps = 2037.325285 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003886	\set nbranches 1 * :scale
+	0.001977	\set ntellers 10 * :scale
+	0.002026	\set naccounts 100000 * :scale
+	0.002327	\setrandom aid 1 :naccounts
+	0.001887	\setrandom bid 1 :nbranches
+	0.001949	\setrandom tid 1 :ntellers
+	0.001827	\setrandom delta -5000 5000
+	2.632727	BEGIN;
+	3.876697	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.739031	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.730322	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.689777	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.610434	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.358829	END;
+### Connections: 48 Transactions: 300
+### Tue May  7 18:11:49 UTC 2013 --  18:11:49 up 23:02,  2 users,  load average: 0.01, 0.08, 0.10
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 300
+number of transactions actually processed: 14400/14400
+tps = 1393.452554 (including connections establishing)
+tps = 1448.685959 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004310	\set nbranches 1 * :scale
+	0.001902	\set ntellers 10 * :scale
+	0.001940	\set naccounts 100000 * :scale
+	0.002205	\setrandom aid 1 :naccounts
+	0.001875	\setrandom bid 1 :nbranches
+	0.001868	\setrandom tid 1 :ntellers
+	0.001826	\setrandom delta -5000 5000
+	2.514326	BEGIN;
+	4.440418	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.662283	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.765090	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.698039	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.527876	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	14.987444	END;
+### Connections: 48 Transactions: 400
+### Tue May  7 18:11:59 UTC 2013 --  18:11:59 up 23:02,  2 users,  load average: 0.01, 0.08, 0.10
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 400
+number of transactions actually processed: 19200/19200
+tps = 1493.111971 (including connections establishing)
+tps = 1541.215164 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003846	\set nbranches 1 * :scale
+	0.002406	\set ntellers 10 * :scale
+	0.002055	\set naccounts 100000 * :scale
+	0.002283	\setrandom aid 1 :naccounts
+	0.001996	\setrandom bid 1 :nbranches
+	0.001874	\setrandom tid 1 :ntellers
+	0.001820	\setrandom delta -5000 5000
+	2.481943	BEGIN;
+	5.164488	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.737021	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.690832	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.603729	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.490751	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	12.444822	END;
+### Connections: 48 Transactions: 500
+### Tue May  7 18:12:12 UTC 2013 --  18:12:12 up 23:03,  2 users,  load average: 0.01, 0.08, 0.10
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 500
+number of transactions actually processed: 24000/24000
+tps = 1608.869052 (including connections establishing)
+tps = 1651.856994 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003938	\set nbranches 1 * :scale
+	0.001985	\set ntellers 10 * :scale
+	0.002015	\set naccounts 100000 * :scale
+	0.002229	\setrandom aid 1 :naccounts
+	0.001876	\setrandom bid 1 :nbranches
+	0.001841	\setrandom tid 1 :ntellers
+	0.001811	\setrandom delta -5000 5000
+	2.507352	BEGIN;
+	4.663039	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.853037	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.697897	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.647876	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.617104	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	10.572475	END;
+### Connections: 48 Transactions: 600
+### Tue May  7 18:12:27 UTC 2013 --  18:12:27 up 23:03,  2 users,  load average: 0.36, 0.15, 0.13
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 600
+number of transactions actually processed: 28800/28800
+tps = 1765.537589 (including connections establishing)
+tps = 1809.216488 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003754	\set nbranches 1 * :scale
+	0.001917	\set ntellers 10 * :scale
+	0.001873	\set naccounts 100000 * :scale
+	0.002202	\setrandom aid 1 :naccounts
+	0.001985	\setrandom bid 1 :nbranches
+	0.002045	\setrandom tid 1 :ntellers
+	0.001860	\setrandom delta -5000 5000
+	2.464499	BEGIN;
+	4.111674	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.638635	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.673615	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.627416	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.490779	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	8.996417	END;
+### Connections: 48 Transactions: 700
+### Tue May  7 18:12:44 UTC 2013 --  18:12:44 up 23:03,  2 users,  load average: 0.52, 0.21, 0.15
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 700
+number of transactions actually processed: 33600/33600
+tps = 1503.432390 (including connections establishing)
+tps = 1530.073213 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003708	\set nbranches 1 * :scale
+	0.001823	\set ntellers 10 * :scale
+	0.001994	\set naccounts 100000 * :scale
+	0.002143	\setrandom aid 1 :naccounts
+	0.001930	\setrandom bid 1 :nbranches
+	0.001982	\setrandom tid 1 :ntellers
+	0.001940	\setrandom delta -5000 5000
+	2.479002	BEGIN;
+	4.660172	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.661728	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.677045	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.655471	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.499546	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	13.381095	END;
+### Connections: 48 Transactions: 800
+### Tue May  7 18:13:06 UTC 2013 --  18:13:06 up 23:03,  2 users,  load average: 0.58, 0.24, 0.16
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 800
+number of transactions actually processed: 38400/38400
+tps = 1587.497925 (including connections establishing)
+tps = 1612.784916 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.003719	\set nbranches 1 * :scale
+	0.001951	\set ntellers 10 * :scale
+	0.001932	\set naccounts 100000 * :scale
+	0.002215	\setrandom aid 1 :naccounts
+	0.001962	\setrandom bid 1 :nbranches
+	0.001954	\setrandom tid 1 :ntellers
+	0.001808	\setrandom delta -5000 5000
+	2.556476	BEGIN;
+	4.232207	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.674484	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.674132	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.671759	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.525595	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	12.006148	END;
+### Connections: 48 Transactions: 900
+### Tue May  7 18:13:30 UTC 2013 --  18:13:30 up 23:04,  2 users,  load average: 0.88, 0.35, 0.20
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 900
+number of transactions actually processed: 43200/43200
+tps = 1909.016790 (including connections establishing)
+tps = 1942.065205 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004072	\set nbranches 1 * :scale
+	0.002226	\set ntellers 10 * :scale
+	0.002114	\set naccounts 100000 * :scale
+	0.002464	\setrandom aid 1 :naccounts
+	0.001970	\setrandom bid 1 :nbranches
+	0.001928	\setrandom tid 1 :ntellers
+	0.001859	\setrandom delta -5000 5000
+	2.472490	BEGIN;
+	3.574829	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.594268	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.637401	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.619029	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.551836	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	7.794037	END;
+### Connections: 48 Transactions: 1000
+### Tue May  7 18:13:53 UTC 2013 --  18:13:53 up 23:04,  2 users,  load average: 0.84, 0.38, 0.21
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 48
+number of threads: 4
+number of transactions per client: 1000
+number of transactions actually processed: 48000/48000
+tps = 1791.622775 (including connections establishing)
+tps = 1817.806586 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004010	\set nbranches 1 * :scale
+	0.001985	\set ntellers 10 * :scale
+	0.001940	\set naccounts 100000 * :scale
+	0.002361	\setrandom aid 1 :naccounts
+	0.002270	\setrandom bid 1 :nbranches
+	0.001938	\setrandom tid 1 :ntellers
+	0.001843	\setrandom delta -5000 5000
+	2.488613	BEGIN;
+	3.821674	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.592153	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.660548	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.628077	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.575327	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	9.236809	END;
+### Connections: 64 Transactions: 100
+### Tue May  7 18:24:01 UTC 2013 --  18:24:01 up 23:14,  2 users,  load average: 0.00, 0.08, 0.14
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 100
+number of transactions actually processed: 6400/6400
+tps = 2081.034170 (including connections establishing)
+tps = 2491.154698 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004289	\set nbranches 1 * :scale
+	0.002159	\set ntellers 10 * :scale
+	0.002000	\set naccounts 100000 * :scale
+	0.002366	\setrandom aid 1 :naccounts
+	0.002115	\setrandom bid 1 :nbranches
+	0.002042	\setrandom tid 1 :ntellers
+	0.001883	\setrandom delta -5000 5000
+	2.740373	BEGIN;
+	4.105340	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.852517	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.997806	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.962115	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.875227	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	5.849739	END;
+### Connections: 64 Transactions: 200
+### Tue May  7 18:24:04 UTC 2013 --  18:24:04 up 23:14,  2 users,  load average: 0.00, 0.08, 0.14
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 200
+number of transactions actually processed: 12800/12800
+tps = 1359.484721 (including connections establishing)
+tps = 1442.033479 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004154	\set nbranches 1 * :scale
+	0.001963	\set ntellers 10 * :scale
+	0.001955	\set naccounts 100000 * :scale
+	0.002317	\setrandom aid 1 :naccounts
+	0.002046	\setrandom bid 1 :nbranches
+	0.002008	\setrandom tid 1 :ntellers
+	0.002028	\setrandom delta -5000 5000
+	2.721641	BEGIN;
+	4.719311	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.821318	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.098887	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.954629	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.826854	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	24.067040	END;
+### Connections: 64 Transactions: 300
+### Tue May  7 18:24:13 UTC 2013 --  18:24:13 up 23:15,  2 users,  load average: 0.00, 0.08, 0.14
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 300
+number of transactions actually processed: 19200/19200
+tps = 1715.452835 (including connections establishing)
+tps = 1795.302423 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004261	\set nbranches 1 * :scale
+	0.002087	\set ntellers 10 * :scale
+	0.001988	\set naccounts 100000 * :scale
+	0.002450	\setrandom aid 1 :naccounts
+	0.002191	\setrandom bid 1 :nbranches
+	0.002025	\setrandom tid 1 :ntellers
+	0.001944	\setrandom delta -5000 5000
+	2.757286	BEGIN;
+	4.717694	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.903848	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.011004	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.999550	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.888064	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	15.248023	END;
+### Connections: 64 Transactions: 400
+### Tue May  7 18:24:25 UTC 2013 --  18:24:25 up 23:15,  2 users,  load average: 0.23, 0.13, 0.16
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 400
+number of transactions actually processed: 25600/25600
+tps = 1892.452095 (including connections establishing)
+tps = 1967.271140 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004206	\set nbranches 1 * :scale
+	0.002062	\set ntellers 10 * :scale
+	0.002084	\set naccounts 100000 * :scale
+	0.002362	\setrandom aid 1 :naccounts
+	0.001993	\setrandom bid 1 :nbranches
+	0.002031	\setrandom tid 1 :ntellers
+	0.002032	\setrandom delta -5000 5000
+	2.751310	BEGIN;
+	5.032444	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.874806	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.967458	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.962207	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.844275	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	12.017600	END;
+### Connections: 64 Transactions: 500
+### Tue May  7 18:24:38 UTC 2013 --  18:24:38 up 23:15,  2 users,  load average: 0.27, 0.14, 0.16
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 500
+number of transactions actually processed: 32000/32000
+tps = 1691.385741 (including connections establishing)
+tps = 1739.334145 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004165	\set nbranches 1 * :scale
+	0.002080	\set ntellers 10 * :scale
+	0.002171	\set naccounts 100000 * :scale
+	0.002406	\setrandom aid 1 :naccounts
+	0.001995	\setrandom bid 1 :nbranches
+	0.001944	\setrandom tid 1 :ntellers
+	0.001933	\setrandom delta -5000 5000
+	2.729021	BEGIN;
+	4.949871	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.872823	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.966813	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.982747	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.819006	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	16.385623	END;
+### Connections: 64 Transactions: 600
+### Tue May  7 18:24:57 UTC 2013 --  18:24:57 up 23:15,  2 users,  load average: 0.54, 0.21, 0.18
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 600
+number of transactions actually processed: 38400/38400
+tps = 1947.530782 (including connections establishing)
+tps = 1998.833961 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004239	\set nbranches 1 * :scale
+	0.002063	\set ntellers 10 * :scale
+	0.002054	\set naccounts 100000 * :scale
+	0.002361	\setrandom aid 1 :naccounts
+	0.002049	\setrandom bid 1 :nbranches
+	0.002009	\setrandom tid 1 :ntellers
+	0.001916	\setrandom delta -5000 5000
+	2.739319	BEGIN;
+	4.228269	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.862181	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.957117	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.971523	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.855946	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	11.986670	END;
+### Connections: 64 Transactions: 700
+### Tue May  7 18:25:17 UTC 2013 --  18:25:17 up 23:16,  2 users,  load average: 1.16, 0.37, 0.24
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 700
+number of transactions actually processed: 44800/44800
+tps = 1798.368382 (including connections establishing)
+tps = 1838.541728 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004298	\set nbranches 1 * :scale
+	0.002072	\set ntellers 10 * :scale
+	0.002085	\set naccounts 100000 * :scale
+	0.002502	\setrandom aid 1 :naccounts
+	0.002165	\setrandom bid 1 :nbranches
+	0.002155	\setrandom tid 1 :ntellers
+	0.001970	\setrandom delta -5000 5000
+	2.767562	BEGIN;
+	4.494226	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.862568	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.941619	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.953369	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.836778	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	14.800333	END;
+### Connections: 64 Transactions: 800
+### Tue May  7 18:25:42 UTC 2013 --  18:25:42 up 23:16,  2 users,  load average: 1.13, 0.44, 0.26
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 800
+number of transactions actually processed: 51200/51200
+tps = 1927.969188 (including connections establishing)
+tps = 1965.644074 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004156	\set nbranches 1 * :scale
+	0.002083	\set ntellers 10 * :scale
+	0.002008	\set naccounts 100000 * :scale
+	0.002365	\setrandom aid 1 :naccounts
+	0.002099	\setrandom bid 1 :nbranches
+	0.001957	\setrandom tid 1 :ntellers
+	0.001964	\setrandom delta -5000 5000
+	2.730107	BEGIN;
+	4.583234	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.854189	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.945055	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.947034	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.821441	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	12.785199	END;
+### Connections: 64 Transactions: 900
+### Tue May  7 18:26:09 UTC 2013 --  18:26:09 up 23:17,  2 users,  load average: 1.37, 0.55, 0.30
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 900
+number of transactions actually processed: 57600/57600
+tps = 2040.854506 (including connections establishing)
+tps = 2078.379366 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004132	\set nbranches 1 * :scale
+	0.002060	\set ntellers 10 * :scale
+	0.002057	\set naccounts 100000 * :scale
+	0.002314	\setrandom aid 1 :naccounts
+	0.002023	\setrandom bid 1 :nbranches
+	0.001956	\setrandom tid 1 :ntellers
+	0.001886	\setrandom delta -5000 5000
+	2.712927	BEGIN;
+	4.313823	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.808049	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.895897	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.917598	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.797928	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	11.375614	END;
+### Connections: 64 Transactions: 1000
+### Tue May  7 18:26:37 UTC 2013 --  18:26:37 up 23:17,  2 users,  load average: 1.88, 0.75, 0.38
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 64
+number of threads: 4
+number of transactions per client: 1000
+number of transactions actually processed: 64000/64000
+tps = 2086.405416 (including connections establishing)
+tps = 2123.026517 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004330	\set nbranches 1 * :scale
+	0.002087	\set ntellers 10 * :scale
+	0.002093	\set naccounts 100000 * :scale
+	0.002434	\setrandom aid 1 :naccounts
+	0.002024	\setrandom bid 1 :nbranches
+	0.002034	\setrandom tid 1 :ntellers
+	0.002038	\setrandom delta -5000 5000
+	2.820955	BEGIN;
+	4.215684	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	2.904096	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	2.962876	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	2.972805	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	2.877865	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	10.457814	END;
+### Connections: 80 Transactions: 100
+### Tue May  7 18:38:58 UTC 2013 --  18:38:58 up 23:29,  2 users,  load average: 0.00, 0.10, 0.22
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 100
+number of transactions actually processed: 8000/8000
+tps = 2134.864173 (including connections establishing)
+tps = 2601.950520 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004266	\set nbranches 1 * :scale
+	0.002100	\set ntellers 10 * :scale
+	0.001917	\set naccounts 100000 * :scale
+	0.002326	\setrandom aid 1 :naccounts
+	0.001989	\setrandom bid 1 :nbranches
+	0.001941	\setrandom tid 1 :ntellers
+	0.001952	\setrandom delta -5000 5000
+	3.106971	BEGIN;
+	5.029359	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.223784	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.443560	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.391037	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.279830	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	7.233793	END;
+### Connections: 80 Transactions: 200
+### Tue May  7 18:39:02 UTC 2013 --  18:39:02 up 23:29,  2 users,  load average: 0.08, 0.12, 0.22
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 200
+number of transactions actually processed: 16000/16000
+tps = 1676.565564 (including connections establishing)
+tps = 1796.015366 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004221	\set nbranches 1 * :scale
+	0.002035	\set ntellers 10 * :scale
+	0.001993	\set naccounts 100000 * :scale
+	0.002622	\setrandom aid 1 :naccounts
+	0.001978	\setrandom bid 1 :nbranches
+	0.001942	\setrandom tid 1 :ntellers
+	0.001920	\setrandom delta -5000 5000
+	3.161339	BEGIN;
+	5.412495	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.290066	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.415015	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.458292	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.277436	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	20.739502	END;
+### Connections: 80 Transactions: 300
+### Tue May  7 18:39:11 UTC 2013 --  18:39:11 up 23:30,  2 users,  load average: 0.23, 0.15, 0.23
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 300
+number of transactions actually processed: 24000/24000
+tps = 1944.734692 (including connections establishing)
+tps = 2049.605623 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004581	\set nbranches 1 * :scale
+	0.002089	\set ntellers 10 * :scale
+	0.001971	\set naccounts 100000 * :scale
+	0.002339	\setrandom aid 1 :naccounts
+	0.001995	\setrandom bid 1 :nbranches
+	0.002020	\setrandom tid 1 :ntellers
+	0.002149	\setrandom delta -5000 5000
+	3.165601	BEGIN;
+	5.512016	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.272957	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.421416	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.418622	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.273082	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	15.493042	END;
+### Connections: 80 Transactions: 400
+### Tue May  7 18:39:24 UTC 2013 --  18:39:24 up 23:30,  2 users,  load average: 0.19, 0.14, 0.23
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 400
+number of transactions actually processed: 32000/32000
+tps = 1768.626413 (including connections establishing)
+tps = 1833.719123 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004261	\set nbranches 1 * :scale
+	0.002138	\set ntellers 10 * :scale
+	0.002155	\set naccounts 100000 * :scale
+	0.002534	\setrandom aid 1 :naccounts
+	0.002075	\setrandom bid 1 :nbranches
+	0.002168	\setrandom tid 1 :ntellers
+	0.001978	\setrandom delta -5000 5000
+	3.318326	BEGIN;
+	5.901730	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.390654	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.421847	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.456619	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.269727	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	19.624328	END;
+### Connections: 80 Transactions: 500
+### Tue May  7 18:39:42 UTC 2013 --  18:39:42 up 23:30,  2 users,  load average: 0.79, 0.28, 0.27
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 500
+number of transactions actually processed: 40000/40000
+tps = 1988.800962 (including connections establishing)
+tps = 2055.316083 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004296	\set nbranches 1 * :scale
+	0.002141	\set ntellers 10 * :scale
+	0.002088	\set naccounts 100000 * :scale
+	0.002468	\setrandom aid 1 :naccounts
+	0.002131	\setrandom bid 1 :nbranches
+	0.001996	\setrandom tid 1 :ntellers
+	0.001947	\setrandom delta -5000 5000
+	3.202000	BEGIN;
+	5.240745	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.291936	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.386570	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.409425	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.271419	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	12.813118	END;
+### Connections: 80 Transactions: 600
+### Tue May  7 18:40:02 UTC 2013 --  18:40:02 up 23:30,  0 users,  load average: 0.84, 0.32, 0.29
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 600
+number of transactions actually processed: 48000/48000
+tps = 1958.503473 (including connections establishing)
+tps = 2017.204824 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004334	\set nbranches 1 * :scale
+	0.002122	\set ntellers 10 * :scale
+	0.002184	\set naccounts 100000 * :scale
+	0.002395	\setrandom aid 1 :naccounts
+	0.002064	\setrandom bid 1 :nbranches
+	0.002018	\setrandom tid 1 :ntellers
+	0.001968	\setrandom delta -5000 5000
+	3.181262	BEGIN;
+	5.413884	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.295750	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.386266	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.452056	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.247375	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	16.372325	END;
+### Connections: 80 Transactions: 700
+### Tue May  7 18:40:27 UTC 2013 --  18:40:27 up 23:31,  0 users,  load average: 1.21, 0.46, 0.33
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 700
+number of transactions actually processed: 56000/56000
+tps = 2039.217651 (including connections establishing)
+tps = 2090.232695 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004193	\set nbranches 1 * :scale
+	0.002179	\set ntellers 10 * :scale
+	0.002144	\set naccounts 100000 * :scale
+	0.002545	\setrandom aid 1 :naccounts
+	0.002037	\setrandom bid 1 :nbranches
+	0.002023	\setrandom tid 1 :ntellers
+	0.001888	\setrandom delta -5000 5000
+	3.151225	BEGIN;
+	5.301601	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.251085	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.361708	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.458954	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.233713	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	15.083408	END;
+### Connections: 80 Transactions: 800
+### Tue May  7 18:40:55 UTC 2013 --  18:40:55 up 23:31,  0 users,  load average: 1.16, 0.52, 0.36
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 800
+number of transactions actually processed: 64000/64000
+tps = 1892.456656 (including connections establishing)
+tps = 1930.031532 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004264	\set nbranches 1 * :scale
+	0.002024	\set ntellers 10 * :scale
+	0.002055	\set naccounts 100000 * :scale
+	0.002336	\setrandom aid 1 :naccounts
+	0.002057	\setrandom bid 1 :nbranches
+	0.001996	\setrandom tid 1 :ntellers
+	0.001897	\setrandom delta -5000 5000
+	3.154962	BEGIN;
+	5.662426	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.262568	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.347218	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.414487	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.197436	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	18.159297	END;
+### Connections: 80 Transactions: 900
+### Tue May  7 18:41:28 UTC 2013 --  18:41:28 up 23:32,  0 users,  load average: 1.09, 0.57, 0.38
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 900
+number of transactions actually processed: 72000/72000
+tps = 1841.310303 (including connections establishing)
+tps = 1872.082902 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004308	\set nbranches 1 * :scale
+	0.002099	\set ntellers 10 * :scale
+	0.002141	\set naccounts 100000 * :scale
+	0.002409	\setrandom aid 1 :naccounts
+	0.002142	\setrandom bid 1 :nbranches
+	0.002014	\setrandom tid 1 :ntellers
+	0.001946	\setrandom delta -5000 5000
+	3.155489	BEGIN;
+	5.745698	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.265123	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.354136	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.410477	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.236750	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	17.676393	END;
+### Connections: 80 Transactions: 1000
+### Tue May  7 18:42:08 UTC 2013 --  18:42:08 up 23:33,  0 users,  load average: 1.42, 0.73, 0.44
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 80
+number of threads: 4
+number of transactions per client: 1000
+number of transactions actually processed: 80000/80000
+tps = 2237.224303 (including connections establishing)
+tps = 2277.753667 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004320	\set nbranches 1 * :scale
+	0.002087	\set ntellers 10 * :scale
+	0.002133	\set naccounts 100000 * :scale
+	0.002442	\setrandom aid 1 :naccounts
+	0.001992	\setrandom bid 1 :nbranches
+	0.002000	\setrandom tid 1 :ntellers
+	0.001982	\setrandom delta -5000 5000
+	3.186874	BEGIN;
+	4.841673	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.286623	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.367470	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.400057	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.261427	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	12.455832	END;
+### Connections: 96 Transactions: 100
+### Tue May  7 18:55:00 UTC 2013 --  18:55:00 up 23:45,  1 user,  load average: 0.00, 0.08, 0.23
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 100
+number of transactions actually processed: 9600/9600
+tps = 1268.006686 (including connections establishing)
+tps = 1413.110538 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004192	\set nbranches 1 * :scale
+	0.002066	\set ntellers 10 * :scale
+	0.002986	\set naccounts 100000 * :scale
+	0.002408	\setrandom aid 1 :naccounts
+	0.002040	\setrandom bid 1 :nbranches
+	0.002071	\setrandom tid 1 :ntellers
+	0.001921	\setrandom delta -5000 5000
+	3.540826	BEGIN;
+	7.117468	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.619052	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	4.033808	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	4.148999	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.723092	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	39.507909	END;
+### Connections: 96 Transactions: 200
+### Tue May  7 18:55:08 UTC 2013 --  18:55:08 up 23:46,  1 user,  load average: 0.00, 0.08, 0.23
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 200
+number of transactions actually processed: 19200/19200
+tps = 1968.549550 (including connections establishing)
+tps = 2144.842019 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004435	\set nbranches 1 * :scale
+	0.002072	\set ntellers 10 * :scale
+	0.002187	\set naccounts 100000 * :scale
+	0.002442	\setrandom aid 1 :naccounts
+	0.002711	\setrandom bid 1 :nbranches
+	0.002034	\setrandom tid 1 :ntellers
+	0.002042	\setrandom delta -5000 5000
+	3.495696	BEGIN;
+	5.629434	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.680613	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.910454	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.869863	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.711759	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	11.742009	END;
+### Connections: 96 Transactions: 300
+### Tue May  7 18:55:18 UTC 2013 --  18:55:18 up 23:46,  1 user,  load average: 0.08, 0.09, 0.23
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 300
+number of transactions actually processed: 28800/28800
+tps = 2144.656005 (including connections establishing)
+tps = 2283.348845 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004342	\set nbranches 1 * :scale
+	0.002029	\set ntellers 10 * :scale
+	0.002025	\set naccounts 100000 * :scale
+	0.002509	\setrandom aid 1 :naccounts
+	0.002121	\setrandom bid 1 :nbranches
+	0.002066	\setrandom tid 1 :ntellers
+	0.001933	\setrandom delta -5000 5000
+	3.476487	BEGIN;
+	6.165076	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.627410	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.809724	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.861292	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.655646	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	15.736316	END;
+### Connections: 96 Transactions: 400
+### Tue May  7 18:55:32 UTC 2013 --  18:55:32 up 23:46,  1 user,  load average: 0.80, 0.25, 0.28
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 400
+number of transactions actually processed: 38400/38400
+tps = 1904.608195 (including connections establishing)
+tps = 1980.640988 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004353	\set nbranches 1 * :scale
+	0.002151	\set ntellers 10 * :scale
+	0.002100	\set naccounts 100000 * :scale
+	0.002475	\setrandom aid 1 :naccounts
+	0.002045	\setrandom bid 1 :nbranches
+	0.002023	\setrandom tid 1 :ntellers
+	0.002007	\setrandom delta -5000 5000
+	3.480305	BEGIN;
+	6.632559	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.610551	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.768837	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.868185	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.587855	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	19.460677	END;
+### Connections: 96 Transactions: 500
+### Tue May  7 18:55:52 UTC 2013 --  18:55:52 up 23:46,  1 user,  load average: 1.12, 0.36, 0.32
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 500
+number of transactions actually processed: 48000/48000
+tps = 2031.677922 (including connections establishing)
+tps = 2100.590588 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004316	\set nbranches 1 * :scale
+	0.002069	\set ntellers 10 * :scale
+	0.002036	\set naccounts 100000 * :scale
+	0.002534	\setrandom aid 1 :naccounts
+	0.002125	\setrandom bid 1 :nbranches
+	0.002060	\setrandom tid 1 :ntellers
+	0.001972	\setrandom delta -5000 5000
+	3.506252	BEGIN;
+	6.454063	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.641604	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.801028	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.844775	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.632337	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	19.143977	END;
+### Connections: 96 Transactions: 600
+### Tue May  7 18:56:16 UTC 2013 --  18:56:16 up 23:47,  1 user,  load average: 1.18, 0.45, 0.35
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 600
+number of transactions actually processed: 57600/57600
+tps = 2106.984247 (including connections establishing)
+tps = 2169.363570 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004164	\set nbranches 1 * :scale
+	0.002019	\set ntellers 10 * :scale
+	0.002026	\set naccounts 100000 * :scale
+	0.002514	\setrandom aid 1 :naccounts
+	0.001989	\setrandom bid 1 :nbranches
+	0.001961	\setrandom tid 1 :ntellers
+	0.001961	\setrandom delta -5000 5000
+	3.639719	BEGIN;
+	6.161567	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.685951	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.813870	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.936144	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.678852	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	17.726774	END;
+### Connections: 96 Transactions: 700
+### Tue May  7 18:56:43 UTC 2013 --  18:56:43 up 23:47,  1 user,  load average: 1.52, 0.59, 0.40
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 700
+number of transactions actually processed: 67200/67200
+tps = 1845.010092 (including connections establishing)
+tps = 1886.294014 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004236	\set nbranches 1 * :scale
+	0.002057	\set ntellers 10 * :scale
+	0.002091	\set naccounts 100000 * :scale
+	0.002475	\setrandom aid 1 :naccounts
+	0.002123	\setrandom bid 1 :nbranches
+	0.001986	\setrandom tid 1 :ntellers
+	0.001947	\setrandom delta -5000 5000
+	3.484060	BEGIN;
+	6.526737	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.609395	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.730427	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.795265	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.559046	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	21.604182	END;
+### Connections: 96 Transactions: 800
+### Tue May  7 18:57:20 UTC 2013 --  18:57:20 up 23:48,  1 user,  load average: 1.45, 0.67, 0.43
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 800
+number of transactions actually processed: 76800/76800
+tps = 2054.266719 (including connections establishing)
+tps = 2097.930437 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004312	\set nbranches 1 * :scale
+	0.002369	\set ntellers 10 * :scale
+	0.002079	\set naccounts 100000 * :scale
+	0.002426	\setrandom aid 1 :naccounts
+	0.002074	\setrandom bid 1 :nbranches
+	0.002012	\setrandom tid 1 :ntellers
+	0.001960	\setrandom delta -5000 5000
+	3.516970	BEGIN;
+	6.122812	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.648555	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.765882	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.823694	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.613135	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	19.733940	END;
+### Connections: 96 Transactions: 900
+### Tue May  7 18:57:57 UTC 2013 --  18:57:57 up 23:48,  1 user,  load average: 1.57, 0.80, 0.49
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 900
+number of transactions actually processed: 86400/86400
+tps = 1958.028969 (including connections establishing)
+tps = 1993.211776 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004362	\set nbranches 1 * :scale
+	0.002015	\set ntellers 10 * :scale
+	0.001947	\set naccounts 100000 * :scale
+	0.002357	\setrandom aid 1 :naccounts
+	0.001983	\setrandom bid 1 :nbranches
+	0.002076	\setrandom tid 1 :ntellers
+	0.001894	\setrandom delta -5000 5000
+	3.486473	BEGIN;
+	6.343506	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.625242	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.743406	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.861676	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.567291	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	21.965239	END;
+### Connections: 96 Transactions: 1000
+### Tue May  7 18:58:41 UTC 2013 --  18:58:41 up 23:49,  1 user,  load average: 1.67, 0.95, 0.55
+transaction type: TPC-B (sort of)
+scaling factor: 5000
+query mode: extended
+number of clients: 96
+number of threads: 4
+number of transactions per client: 1000
+number of transactions actually processed: 96000/96000
+tps = 2341.223411 (including connections establishing)
+tps = 2386.946150 (excluding connections establishing)
+statement latencies in milliseconds:
+	0.004254	\set nbranches 1 * :scale
+	0.002099	\set ntellers 10 * :scale
+	0.002003	\set naccounts 100000 * :scale
+	0.002369	\setrandom aid 1 :naccounts
+	0.001982	\setrandom bid 1 :nbranches
+	0.001947	\setrandom tid 1 :ntellers
+	0.001925	\setrandom delta -5000 5000
+	3.507906	BEGIN;
+	5.379977	UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+	3.650809	SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+	3.755482	UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+	3.825189	UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+	3.622130	INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+	14.872928	END;
+### 65 minutes

@@ -1,0 +1,122 @@
+Connections: 16 Transactions: 100
+load average: 0.00, 0.01, 0.05
+Connections: 16 Transactions: 100
+load average: 0.00, 0.01, 0.05
+Connections: 16 Transactions: 200
+load average: 0.00, 0.01, 0.05
+Connections: 16 Transactions: 300
+load average: 0.00, 0.01, 0.05
+Connections: 16 Transactions: 400
+load average: 0.00, 0.01, 0.05
+Connections: 16 Transactions: 500
+load average: 0.16, 0.05, 0.06
+Connections: 16 Transactions: 600
+load average: 0.14, 0.05, 0.06
+Connections: 16 Transactions: 700
+load average: 0.25, 0.08, 0.06
+Connections: 16 Transactions: 800
+load average: 0.20, 0.07, 0.06
+Connections: 16 Transactions: 900
+load average: 0.15, 0.07, 0.06
+Connections: 16 Transactions: 1000
+load average: 0.11, 0.06, 0.06
+Connections: 32 Transactions: 100
+load average: 0.01, 0.04, 0.05
+Connections: 32 Transactions: 200
+load average: 0.01, 0.04, 0.05
+Connections: 32 Transactions: 300
+load average: 0.01, 0.04, 0.05
+Connections: 32 Transactions: 400
+load average: 0.00, 0.04, 0.05
+Connections: 32 Transactions: 500
+load average: 0.08, 0.05, 0.05
+Connections: 32 Transactions: 600
+load average: 0.20, 0.08, 0.06
+Connections: 32 Transactions: 700
+load average: 0.37, 0.12, 0.07
+Connections: 32 Transactions: 800
+load average: 0.51, 0.17, 0.09
+Connections: 32 Transactions: 900
+load average: 0.67, 0.22, 0.11
+Connections: 32 Transactions: 1000
+load average: 0.86, 0.29, 0.13
+Connections: 48 Transactions: 100
+load average: 0.01, 0.09, 0.11
+Connections: 48 Transactions: 200
+load average: 0.01, 0.08, 0.10
+Connections: 48 Transactions: 300
+load average: 0.01, 0.08, 0.10
+Connections: 48 Transactions: 400
+load average: 0.01, 0.08, 0.10
+Connections: 48 Transactions: 500
+load average: 0.01, 0.08, 0.10
+Connections: 48 Transactions: 600
+load average: 0.36, 0.15, 0.13
+Connections: 48 Transactions: 700
+load average: 0.52, 0.21, 0.15
+Connections: 48 Transactions: 800
+load average: 0.58, 0.24, 0.16
+Connections: 48 Transactions: 900
+load average: 0.88, 0.35, 0.20
+Connections: 48 Transactions: 1000
+load average: 0.84, 0.38, 0.21
+Connections: 64 Transactions: 100
+load average: 0.00, 0.08, 0.14
+Connections: 64 Transactions: 200
+load average: 0.00, 0.08, 0.14
+Connections: 64 Transactions: 300
+load average: 0.00, 0.08, 0.14
+Connections: 64 Transactions: 400
+load average: 0.23, 0.13, 0.16
+Connections: 64 Transactions: 500
+load average: 0.27, 0.14, 0.16
+Connections: 64 Transactions: 600
+load average: 0.54, 0.21, 0.18
+Connections: 64 Transactions: 700
+load average: 1.16, 0.37, 0.24
+Connections: 64 Transactions: 800
+load average: 1.13, 0.44, 0.26
+Connections: 64 Transactions: 900
+load average: 1.37, 0.55, 0.30
+Connections: 64 Transactions: 1000
+load average: 1.88, 0.75, 0.38
+Connections: 80 Transactions: 100
+load average: 0.00, 0.10, 0.22
+Connections: 80 Transactions: 200
+load average: 0.08, 0.12, 0.22
+Connections: 80 Transactions: 300
+load average: 0.23, 0.15, 0.23
+Connections: 80 Transactions: 400
+load average: 0.19, 0.14, 0.23
+Connections: 80 Transactions: 500
+load average: 0.79, 0.28, 0.27
+Connections: 80 Transactions: 600
+load average: 0.84, 0.32, 0.29
+Connections: 80 Transactions: 700
+load average: 1.21, 0.46, 0.33
+Connections: 80 Transactions: 800
+load average: 1.16, 0.52, 0.36
+Connections: 80 Transactions: 900
+load average: 1.09, 0.57, 0.38
+Connections: 80 Transactions: 1000
+load average: 1.42, 0.73, 0.44
+Connections: 96 Transactions: 100
+load average: 0.00, 0.08, 0.23
+Connections: 96 Transactions: 200
+load average: 0.00, 0.08, 0.23
+Connections: 96 Transactions: 300
+load average: 0.08, 0.09, 0.23
+Connections: 96 Transactions: 400
+load average: 0.80, 0.25, 0.28
+Connections: 96 Transactions: 500
+load average: 1.12, 0.36, 0.32
+Connections: 96 Transactions: 600
+load average: 1.18, 0.45, 0.35
+Connections: 96 Transactions: 700
+load average: 1.52, 0.59, 0.40
+Connections: 96 Transactions: 800
+load average: 1.45, 0.67, 0.43
+Connections: 96 Transactions: 900
+load average: 1.57, 0.80, 0.49
+Connections: 96 Transactions: 1000
+load average: 1.67, 0.95, 0.55
