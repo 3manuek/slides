@@ -16,26 +16,35 @@ graph TB
 
     subgraph "Connection Pooling Layer"
         subgraph "Write Pool"
-            PGBW1[PgBouncer Write 1<br/>:6432]
-            PGBW2[PgBouncer Write 2<br/>:6432]
-            PGBW3[PgBouncer Write N<br/>:6432]
+            PGBW1[PgBouncer Write 1]
+            PGBW2[PgBouncer Write 2]
+            PGBW3[PgBouncer Write N]
         end
         subgraph "Read Pool"
-            PGBR1[PgBouncer Read 1<br/>:6433]
-            PGBR2[PgBouncer Read 2<br/>:6433]
-            PGBR3[PgBouncer Read N<br/>:6433]
+            PGBR1[PgBouncer Read 1]
+            PGBR2[PgBouncer Read 2]
+            PGBR3[PgBouncer Read N]
         end
     end
 
     subgraph "Database Cluster"
         subgraph "Patroni Cluster"
-            PAT1["Patroni Primary<br/>PostgreSQL Master<br/>:5432<br/>Writes + Reads"]
-            PAT2["Patroni Replica 1<br/>PostgreSQL Standby<br/>:5432<br/>Reads Only"]
-            PAT3["Patroni Replica 2<br/>PostgreSQL Standby<br/>:5432<br/>Reads Only"]
+            subgraph "Patroni Node"
+              PAT1["Patroni Primary<br/>PostgreSQL Primary<br/>Writes + Reads"]
+              EXPORTER1[postgres_exporter<br/>node_exporter<br/>on Primary]
+            end
+            subgraph "Patroni Node"
+              PAT2["Patroni Replica 1<br/>PostgreSQL Standby<br/>Reads Only"]
+              EXPORTER2[postgres_exporter<br/>node_exporter<br/>on Replica 1]
+            end
+            subgraph "Patroni Node"
+             PAT3["Patroni Replica 2<br/>PostgreSQL Standby<br/>Reads Only"]
+              EXPORTER3[postgres_exporter<br/>node_exporter<br/>on Replica 2]
+            end
         end
     end
 
-    subgraph "High Availability & Config"
+    subgraph "DCS Cluster"
         DCS[(etcd/Consul/Zookeeper<br/>Leader Election<br/>Cluster State)]
     end
 
@@ -47,9 +56,6 @@ graph TB
     subgraph "Monitoring Stack"
         PROM[Prometheus<br/>Metrics Collection]
         GRAF[Grafana<br/>Visualization]
-        EXPORTER1[postgres_exporter<br/>on Primary]
-        EXPORTER2[postgres_exporter<br/>on Replica 1]
-        EXPORTER3[postgres_exporter<br/>on Replica 2]
         PGBEXPORTER[pgbouncer_exporter]
         PATRONIEXPORTER[patroni endpoints]
     end

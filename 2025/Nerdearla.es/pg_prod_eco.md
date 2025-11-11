@@ -1,7 +1,7 @@
 ---
 paginate: true
 marp: true
-footer: '© 2025 [tr3s.ma](https://tr3s.ma)'
+footer: '© 2025 <b>[tr3s.ma](https://tr3s.ma)</b>'
 header: '![image w:150px](./assets/nerdearla.png)'
 
 style: |
@@ -43,9 +43,12 @@ style: |
     flex: 1;
   }
 
-backgroundColor: #000
+# backgroundColor: #000
 
 ---
+
+<!-- _color: white -->
+<!-- _backgroundColor: black -->
 
 ![bg left:40% 80%](./assets/nerdearla.png)
 
@@ -56,13 +59,11 @@ backgroundColor: #000
 ---
 <!-- backgroundColor: white -->
 
-## Sobre el speaker
+## Sobre [Emanuel Calvo](https://www.linkedin.com/in/ecbcbcb/) / [tr3s.ma](https://tr3s.ma)
 
-![bg left:40% 80%](./assets/profile.jpg)
+![bg left:30% 80% drop-shadow](./assets/profile.jpg)
 
-[Emanuel Calvo](https://www.linkedin.com/in/ecbcbcb/)   | [tr3s.ma](https://tr3s.ma)
-> _Staff Infrastructure Engineer at [Workato](https://www.workato.com/)_ 
-> ![w:50px](./assets/workato.svg) 
+> _Staff Infrastructure Engineer at [Workato](https://www.workato.com/)_ ![w:80px](./assets/workato.svg) 
 
 > **Database/Infrastructure Engineering.**
 Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
@@ -94,29 +95,29 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 </div>
 
 ---
-<!-- backgroundColor: orange -->
+<!-- _backgroundColor: orange -->
 
 # [Laboratorios](https://github.com/3manuek/labs)
 
 ![bg right:60% 80%](./assets/url_labs.svg)
 
 ---
+<!-- _backgroundColor: orange -->
+
 # [Presentación](https://github.com/3manuek/slides/tree/master/2025/Nerdearla.es)
 
 ![bg right:60% 80%](./assets/url_slides.svg)
 
 
 ---
-<!-- backgroundColor: white -->
 
-# Introducción 
-
+# Sobre PostgreSQL 
 
 | Característica    | Descripción |
 |-------------------|-------------|
-| Open Source       | El Linux de las bases de datos. Releases anuales estables. |
+| Open Source       | _El GNU/Linux de las bases de datos_. Releases anuales estables. |
 | Versatilidad      | Desde contenedores hasta bare metal. Presente en la mayor cantidad de proveedores en la nube, kubernetes e incluso desde el [browser](http://pglite.dev). Sandbox de [psql](https://psql.sh/). |
-| Funcionalidades   | ACID, transaccionalidad, Framework de extensiones, Integrabilidad (CDC). |
+| Funcionalidades   | ACID, Framework de extensiones, Integrabilidad (CDC, FDWs). |
 
 
 ---
@@ -131,18 +132,27 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 
 ---
 
-# Funcionalidades 
+# Alternativas (I)
 
-| Tecnología | Alternativa/Funcionalidad |
+| Tecnología | Alternativa |
 |---|---|
 | Elasticsearch | tsquery/tsvector, pgvector, [ParadeDB](https://www.paradedb.com/) |
 | MongoDB | jsonb, pgvector, [FerretDB](https://www.ferretdb.com/) |
 | Redis | Unlogged tables, hstore |
 | OLAP/Snowflake | [pg_lake](https://github.com/snowflake-labs/pg_lake), [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake), [pg_duckdb](https://github.com/duckdb/pg_duckdb) | 
 | Queue | [pgmq](https://github.com/pgmq/pgmq), Listen/Notify |
+
+---
+
+# Alternativas (II)
+
+| Tecnología | Alternativa |
+|---|---|
 | Pub/Sub | Particionado, Logical Decoding. [Topic Partitions](https://topicpartition.io/blog/postgres-pubsub-queue-benchmarks)| 
 | Desarrollo de APIs | [PostgREST](https://github.com/PostgREST/postgrest), [Prest](https://github.com/prest/prest) |
-
+| Time Series | [TigerData (TimescaleDB)](https://tigerdata.com) |
+| Spatial | [PostGIS](https://postgis.net/) |
+| Materialized Views | [Epsio](https://docs.epsio.io)| 
 
 ---
 
@@ -234,7 +244,7 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 <!-- backgroundColor: black -->
 
 
-# Alta Disponibilidad
+# Alta Disponibilidad y Escalamiento Vertical
 
 ---
 <!-- backgroundColor: white -->
@@ -260,9 +270,33 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ---
 
+## Patroni Básico
+
+
+![bg right:70% 85%](./charts/downloads/postgres-patroni-basic-01.svg)
+
+---
+
+#### Patroni <br/> Production
+
+![bg right:75% 90%](./charts/downloads/postgres-patroni-production-01.svg)
+
+
+---
+
 ###### [Multi region Patroni and Consul](https://ongres.com/blog/improving-your-postgres-high-availability/)
 
 ![bg right:80% 95%](./charts/downloads/patroni-consul-multiregion-01.svg)
+
+---
+
+# Columnar Storage
+
+- [TigerData Columnar Compression](https://www.tigerdata.com/blog/building-columnar-compression-in-a-row-oriented-database)
+- [Citus Columnar Storage](https://github.com/citusdata/citus/tree/main/src/backend/columnar)
+  - [cstore_fdw](https://github.com/citusdata/cstore_fdw)
+- [Hydra](https://github.com/hydradatabase/columnar).
+- [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake)
 
 
 ---
@@ -278,12 +312,13 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ---
 
-# Poolers y balanceadores
+## Poolers
 
 - [PgBouncer](https://www.pgbouncer.org/): Single Thread, opción por defecto.
 - [pgcat](https://github.com/postgresml/pgcat): Soporta Sharding por Hash. 
 - [pgdog](https://pgdog.dev): Soporte de sharding por hash.
 - [Odyssey](https://github.com/yandex/odyssey)
+- AWS RDS Proxy
 
 ## Balanceo
 - [pgpool-II](https://www.pgpool.net/): Pool, balanceo y clustering.
@@ -313,17 +348,17 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 - [eBPF pgtracer](https://github.com/Aiven-Open/pgtracer)
 
 ---
-<!-- backgroundColor: black -->
+<!-- _backgroundColor: black -->
 
 # ↔️ Escalamiento Horizontal
 
 
 ---
-<!-- backgroundColor: white -->
 
 ## Soluciones de Escalamiento Horizontal
 
-- [Citus](https://www.citusdata.com/)
+- [Citus](https://www.citusdata.com/). 
+  - **Columnar Storage**, Sharding y Replicación. Uso de _coordinators_ y _workers_.
 - [Yugabyte](https://www.yugabyte.com/)
 - [Multigres](https://github.com/multigres/multigres) / Vitess-like
 - Bi-directional Logical Replication
@@ -350,7 +385,7 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ---
 
-# Citus (1)
+# [Citus (1)](https://github.com/3manuek/labs/blob/main/swarm/compose/citus/docker-compose-citus.yaml)
 
 ![bg Patroni Citus right:70% 80%](./charts/downloads/postgres-citus-patroni-01.svg)
 
@@ -385,7 +420,7 @@ SELECT create_distributed_index('campaigns', 'id');
 * Con Logical Replication:
     * Crear LR con `copy_data = true`.
     * Recomendado `disable_on_error` y `streaming=on`.
-* PAUSE/Configuración Pool/RESUME en PgBouncer.
+* `PAUSE`/Configuración Pool/`RESUME` en PgBouncer.
 * [Upgrades con LR](https://www.postgresql.org/docs/current/logical-replication-upgrade.html)
 
 
@@ -402,8 +437,9 @@ SELECT create_distributed_index('campaigns', 'id');
 
 ---
 
-# Extensiones / Operadores
+# Extensiones
 
+Links y extensiones relevantes:
 - [TDE](https://github.com/percona/pg_tde)
 - [pg_oidc_validator](https://github.com/Percona-Lab/pg_oidc_validator)
 - [+1000 extensiones](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47)
@@ -417,7 +453,7 @@ SELECT create_distributed_index('campaigns', 'id');
 
 - [OrioleDB](https://www.orioledb.com/docs/usage/decoupled-storage) 
     - Almacenamiento y Cómputo desacoplado.
-- [OCI Images](https://ongres.com/blog/why-postgres-extensions-should-be-distributed-and-packaged-as-oci-images/) / [OCI Images](https://speakerdeck.com/ongres/postgres-a-la-carte-dynamic-container-images-with-your-choice-of-extensions)
+- [OCI Images](https://ongres.com/blog/why-postgres-extensions-should-be-distributed-and-packaged-as-oci-images/) / [PGA](https://speakerdeck.com/ongres/postgres-a-la-carte-dynamic-container-images-with-your-choice-of-extensions)
     - Imágenes de contenedores dinámicas (docir). PGA (Postgres Anywhere)
 
 --- 
@@ -442,9 +478,11 @@ SELECT create_distributed_index('campaigns', 'id');
 
 ---
 
-<!-- backgroundColor: lightgreen -->
+<!-- backgroundColor: lightgrey -->
 
 # ¡Gracias!
+
+<br/>
 
 [Workato careers](https://www.workato.com/careers) 
 ![workato careers w:300px](./assets/careers.png) 

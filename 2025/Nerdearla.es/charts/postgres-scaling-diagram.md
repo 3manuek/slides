@@ -5,22 +5,25 @@
 ```mermaid
 mindmap
   root(Escalamiento)
-    Vertical
+    Vertical((Vertical))
       AIO
       Mejoras Vacuum
       Particionado
       UUIDv7 
       Streaming Replication
       Pooling de conexiones
-      OrioleDB
       Extensiones
+        OrioleDB
       Skip Scan en índices
-    Horizontal  
-      Logical Replication
-      Bi-directional Logical Replication
-      LR desde Réplicas
-      Sharding
+      Columnar Storage
         Citus
-        Custom Sharding
+    Horizontal((Horizontal))  
+      Logical Replication
+        LR desde Réplicas
+      Bi-directional Logical Replication
+      Sharding(Sharding)
+        Citus
+        Custom Sharding con FDWs
       Foreign Data Wrappers
 ```
+
