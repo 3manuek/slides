@@ -7,6 +7,7 @@ header: '![image w:150px](./assets/nerdearla.png)'
 style: |
   section h1, h1, section.title, .title, .marp-title, .marp-slide .title, .marp-h1 {
     color:rgb(75, 169, 49) !important;
+    text-align: left;
   }
 
   section h1, h1 {
@@ -47,14 +48,17 @@ style: |
 
 ---
 
-<!-- _color: white -->
-<!-- _backgroundColor: black -->
+<!--
+_backgroundColor: black
+_color: white
+_class: lead
+-->
 
 ![bg left:40% 80%](./assets/nerdearla.png)
 
 # **Ecosistemas modernos sobre Postgres en Producción**
 
-## [Nerdearla España 2025](https://nerdearla.es)
+##### [Nerdearla España 2025](https://nerdearla.es)
 
 ---
 <!-- backgroundColor: white -->
@@ -72,7 +76,6 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 ![qr right:92% 96% w:200](./assets/qr-code.png) 
 
 ---
-
 
 # Agenda
 
@@ -95,14 +98,14 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 </div>
 
 ---
-<!-- _backgroundColor: orange -->
+<!-- _backgroundColor: rgb(241, 184, 76) -->
 
 # [Laboratorios](https://github.com/3manuek/labs)
 
 ![bg right:60% 80%](./assets/url_labs.svg)
 
 ---
-<!-- _backgroundColor: orange -->
+<!-- _backgroundColor: rgb(241, 184, 76) -->
 
 # [Presentación](https://github.com/3manuek/slides/tree/master/2025/Nerdearla.es)
 
@@ -277,9 +280,8 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ---
 
-#### Patroni <br/> Production
 
-![bg right:75% 90%](./charts/downloads/postgres-patroni-production-01.svg)
+![Patroni w:1300px](./charts/downloads/postgres-patroni-production-01.svg)
 
 
 ---

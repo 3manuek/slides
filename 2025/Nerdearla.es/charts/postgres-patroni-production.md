@@ -14,44 +14,47 @@ graph TB
         HAProxy[HAProxy Alternative<br/>Write: :5432<br/>Read: :5433]
     end
 
-    subgraph "Connection Pooling Layer"
-        subgraph "Write Pool"
-            PGBW1[PgBouncer Write 1]
-            PGBW2[PgBouncer Write 2]
-            PGBW3[PgBouncer Write N]
-        end
-        subgraph "Read Pool"
-            PGBR1[PgBouncer Read 1]
-            PGBR2[PgBouncer Read 2]
-            PGBR3[PgBouncer Read N]
-        end
-    end
 
-    subgraph "Database Cluster"
+    subgraph "Database, Poolers & DCS Clusters"
+        subgraph "Connection Pooling Layer"
+            subgraph "Write Pool"
+                PGBW1[PgBouncer Write 1]
+                PGBW2[PgBouncer Write 2]
+                PGBW3[PgBouncer Write N]
+            end
+            subgraph "Read Pool"
+                PGBR1[PgBouncer Read 1]
+                PGBR2[PgBouncer Read 2]
+                PGBR3[PgBouncer Read N]
+            end
+        end
+
+        subgraph "DCS Cluster"
+          DCS[(etcd/Consul/Zookeeper<br/>Leader Election<br/>Cluster State)]
+        end
+
         subgraph "Patroni Cluster"
             subgraph "Patroni Node"
-              PAT1["Patroni Primary<br/>PostgreSQL Primary<br/>Writes + Reads"]
-              EXPORTER1[postgres_exporter<br/>node_exporter<br/>on Primary]
+              PAT1["Patroni Primary<br/>PostgreSQL Primary"]
+              EXPORTER1[postgres_exporter<br/>node_exporter]
             end
             subgraph "Patroni Node"
-              PAT2["Patroni Replica 1<br/>PostgreSQL Standby<br/>Reads Only"]
-              EXPORTER2[postgres_exporter<br/>node_exporter<br/>on Replica 1]
+              PAT2["Patroni Replica 1<br/>PostgreSQL Standby"]
+              EXPORTER2[postgres_exporter<br/>node_exporter]
             end
             subgraph "Patroni Node"
-             PAT3["Patroni Replica 2<br/>PostgreSQL Standby<br/>Reads Only"]
-              EXPORTER3[postgres_exporter<br/>node_exporter<br/>on Replica 2]
+             PAT3["Patroni Replica 2<br/>PostgreSQL Standby"]
+              EXPORTER3[postgres_exporter<br/>node_exporter]
             end
+        end
+
+        subgraph "Backup & Recovery"
+          BACKUP[pgBackRest/WAL-G<br/>Backup Server]
         end
     end
 
-    subgraph "DCS Cluster"
-        DCS[(etcd/Consul/Zookeeper<br/>Leader Election<br/>Cluster State)]
-    end
 
-    subgraph "Backup & Recovery"
-        BACKUP[pgBackRest/WAL-G<br/>Backup Server]
-        S3[(S3/Object Storage<br/>WAL Archives<br/>Base Backups)]
-    end
+    S3[(S3/Object Storage<br/>WAL Archives<br/>Base Backups)]
 
     subgraph "Monitoring Stack"
         PROM[Prometheus<br/>Metrics Collection]
