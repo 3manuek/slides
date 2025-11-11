@@ -276,7 +276,7 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 ## Patroni Básico
 
 
-![bg right:70% 85%](./charts/downloads/postgres-patroni-basic-01.svg)
+![bg right:75% 70%](./charts/downloads/postgres-patroni-basic-01.svg)
 
 ---
 

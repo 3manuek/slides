@@ -17,43 +17,38 @@ graph TB
     subgraph "Connection Pooling Layer"
         PGB1[PgBouncer 1]
         PGB2[PgBouncer 2]
-        PGB3[PgBouncer 3]
         PGB4[PgBouncer N]
     end
 
-    subgraph "Database Cluster"
-        subgraph "Patroni Cluster"
-            PAT1[("Patroni Primary<br/>PostgreSQL Primary")]
-            PAT2[("Patroni Replica 1<br/>PostgreSQL Standby")]
-            PAT3[("Patroni Replica 2<br/>PostgreSQL Standby")]
-        end
+    subgraph "Patroni Cluster"
+        PAT1[("Patroni Primary")]
+        PAT2[("Patroni Replica")]
+        PAT3[("Patroni Replica")]
     end
 
+    PAT1 <-.->|Health Checks<br/>Leader Election| DCS
+    PAT2 <-.->|Health Checks<br/>Monitor Leader| DCS
+    PAT3 <-.->|Health Checks<br/>Monitor Leader| DCS
+
+    PGB1 -.->|Health Check<br/>Update databases| DCS
+    PGB2 -.->|Health Check<br/>Update databases| DCS
+    PGB4 -.->|Health Check<br/>Update databases| DCS
+    
     C1 --> Envoy
     C2 --> Envoy
     C3 --> Envoy
 
     Envoy --> PGB1
     Envoy --> PGB2
-    Envoy --> PGB3
     Envoy --> PGB4
 
     PGB1 --> PAT1
     PGB2 --> PAT1
-    PGB3 --> PAT1
     PGB4 --> PAT1
 
     PAT1 -.->|Streaming Replication| PAT2
     PAT1 -.->|Streaming Replication| PAT3
 
-    PAT1 <-.->|Health Checks<br/>Leader Election| DCS
-    PAT2 <-.->|Health Checks<br/>Monitor Leader| DCS
-    PAT3 <-.->|Health Checks<br/>Monitor Leader| DCS
-
-    PGB1 -.->|Health Check| DCS
-    PGB2 -.->|Health Check| DCS
-    PGB3 -.->|Health Check| DCS
-    PGB4 -.->|Health Check| DCS
 
     style PAT1 fill:#2ecc71,stroke:#27ae60,stroke-width:3px
     style PAT2 fill:#3498db,stroke:#2980b9,stroke-width:2px
