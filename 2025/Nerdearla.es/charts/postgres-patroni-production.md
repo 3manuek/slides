@@ -35,15 +35,15 @@ graph TB
 
         subgraph "Patroni Cluster"
             subgraph "Patroni Node"
-              PAT1["Patroni Primary<br/>PostgreSQL Primary"]
+              PAT1["Patroni Primary"]
               EXPORTER1[postgres_exporter<br/>node_exporter]
             end
             subgraph "Patroni Node"
-              PAT2["Patroni Replica 1<br/>PostgreSQL Standby"]
+              PAT2["Patroni Replica"]
               EXPORTER2[postgres_exporter<br/>node_exporter]
             end
             subgraph "Patroni Node"
-             PAT3["Patroni Replica 2<br/>PostgreSQL Standby"]
+             PAT3["Patroni Replica"]
               EXPORTER3[postgres_exporter<br/>node_exporter]
             end
         end
@@ -51,6 +51,7 @@ graph TB
         subgraph "Backup & Recovery"
           BACKUP[pgBackRest/WAL-G<br/>Backup Server]
         end
+        PGBEXPORTER[pgbouncer_exporter]
     end
 
 
@@ -59,8 +60,6 @@ graph TB
     subgraph "Monitoring Stack"
         PROM[Prometheus<br/>Metrics Collection]
         GRAF[Grafana<br/>Visualization]
-        PGBEXPORTER[pgbouncer_exporter]
-        PATRONIEXPORTER[patroni endpoints]
     end
 
     %% Client to LB
@@ -116,15 +115,12 @@ graph TB
     PAT3 --> EXPORTER3
     PGBW1 --> PGBEXPORTER
     PGBR1 --> PGBEXPORTER
-    PAT1 -->|/metrics| PATRONIEXPORTER
-    PAT2 -->|/metrics| PATRONIEXPORTER
-    PAT3 -->|/metrics| PATRONIEXPORTER
 
-    EXPORTER1 --> PROM
-    EXPORTER2 --> PROM
-    EXPORTER3 --> PROM
+
+    EXPORTER1 -->|/metrics| PROM
+    EXPORTER2 -->|/metrics| PROM
+    EXPORTER3 -->|/metrics| PROM
     PGBEXPORTER --> PROM
-    PATRONIEXPORTER --> PROM
     DCS -->|etcd metrics| PROM
 
     PROM --> GRAF

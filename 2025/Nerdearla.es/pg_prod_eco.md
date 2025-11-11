@@ -280,9 +280,7 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ---
 
-
-![Patroni w:1300px](./charts/downloads/postgres-patroni-production-01.svg)
-
+![Patroni w:900px](./charts/downloads/postgres-patroni-production-01.svg)
 
 ---
 
