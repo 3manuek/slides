@@ -89,4 +89,32 @@ flowchart TD
     patroni2 <-.-> etcd
 ```
 
+## Nodo de Patroni
+
+```mermaid
+graph TD
+    subgraph "Patroni Node"
+        Primary[("Patroni Primary")]
+        pgbouncer(pgbouncer local)
+        subgraph "Backup"
+            pgBackRest[pgBackRest]
+        end
+        subgraph "Monitoring"
+            pgexporter[postgres_exporter]
+            nodeexporter[node_exporter]
+        end
+        subgraph "DCS agent"
+            consul[Consul Agent]
+            etcd[etcd gateway]
+        end
+    end
+
+    Primary --> pgBackRest
+    pgbouncer --> Primary
+    consul --> Primary
+    etcd --> Primary
+    pgBackRest --> pgbackrestrepo[pgBackRest Repository]
+    pgBackRest --> S3[Block Storage]
+    Primary --> pgexporter
+```
 

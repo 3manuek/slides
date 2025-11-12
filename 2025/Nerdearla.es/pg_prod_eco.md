@@ -52,6 +52,7 @@ style: |
 _backgroundColor: black
 _color: white
 _class: lead
+_paginate: false
 -->
 
 ![bg left:40% 80%](./assets/nerdearla.png)
@@ -61,9 +62,11 @@ _class: lead
 ##### [Nerdearla España 2025](https://nerdearla.es)
 
 ---
-<!-- backgroundColor: white -->
+<!-- backgroundColor: white 
+_paginate: false
+-->
 
-## Sobre [Emanuel Calvo](https://www.linkedin.com/in/ecbcbcb/) / [tr3s.ma](https://tr3s.ma)
+### Sobre [Emanuel Calvo](https://www.linkedin.com/in/ecbcbcb/) / [tr3s.ma](https://tr3s.ma)
 
 ![bg left:30% 80% drop-shadow](./assets/profile.jpg)
 
@@ -73,7 +76,7 @@ _class: lead
 Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 
 
-![qr right:92% 96% w:200](./assets/qr-code.png) 
+![qr w:180](./assets/qr-code.png) 
 
 ---
 
@@ -84,7 +87,7 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 <div class="container">
 <div class="col">
 ℹ️ Postgres Hoy <br/>
-⏳ Alta Disponibilidad <br/>
+⏳ Alta Disponibilidad y Escalado Vertical<br/>
 💾 Respaldos <br/>
 🔄 Poolers y balanceadores <br/>
 
@@ -160,9 +163,9 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 ---
 
 # Escalamiento
+<br />
 
-
-![Escalamiento](./charts/downloads/postgres-scaling-diagram-01.svg)
+![Escalamiento w:1000px](./charts/downloads/postgres-scaling-diagram-01.svg)
 
 ---
 
@@ -186,12 +189,11 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 
 # Postgresql v18 (1)
 
-
 - **⚠️** | **Asynchronous I/O (AIO)** provee un estimado de 2/3x en mejora de rendimiento. [io_uring/liburing support commit](https://github.com/postgres/postgres/commit/c325a7633fcb33dbd73f46ddbbe91e95ddf3b227)
   - Impacta en lecturas secuenciales y bitmap scans, además de una significativa mejora en el rendimiento de VACUUM. [No siempre es mejor tenerlo activado](https://vondra.me/posts/tuning-aio-in-postgresql-18/).
   - Valores de `io_method ` pueden ser: `worker`, `sync`, `io_uring`. Número de _workers_ controlado en `io_workers`.
   - Monitoreo de Operaciones de IO: `pg_aios`.  
-  - Cálculos CRC32 con una mejora de rendimiento desde **0.5x** a **3x** en instrucciones AVX-512  (AMD e Intel) para cálculo de rutas. [Article](https://www.phoronix.com/news/PostgreSQL-CRC32C-AVX512)
+  - Cálculos CRC32 con una mejora de rendimiento de **0.5x** a **3x** en instrucciones AVX-512 (AMD e Intel) para cálculo de rutas. [Article](https://www.phoronix.com/news/PostgreSQL-CRC32C-AVX512)
 
 ---
 
@@ -244,26 +246,51 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ---
 
-<!-- backgroundColor: black -->
+<!-- _backgroundColor: black -->
 
 
 # Alta Disponibilidad y Escalamiento Vertical
 
 ---
-<!-- backgroundColor: white -->
 
-# Soluciones de (o con) Alta Disponibilidad
+# Configuración 
 
-- [Patroni](https://github.com/patroni/patroni)
-- [Stolon](https://github.com/sorintlab/stolon)
-- [pg_auto_failover](https://github.com/hapostgres/pg_auto_failover)
-
-- [Yugabyte](https://docs.yugabyte.com/preview/yugabyte-platform/administer-yugabyte-platform/high-availability/) Replicación basada en protocolo RAFT.
-- [EDB Distributed](https://www.enterprisedb.com/docs/edb-postgres-ai/cloud-service/references/supported_cluster_types/distributed_highavailability/)
+- [PGTune](https://pgtune.leopard.in.ua/): Configuración de Postgres para diferentes hardware.
+- [postgresqlco.nf](https://postgresqlco.nf/): Toda la información de la configuración de Postgres.
 
 ---
 
-## [Patroni 101](https://github.com/3manuek/labs/tree/main/patroni)
+# Replicación
+
+- Streaming Replication
+  - Utilizada para PITR, DR y escalamiento _vertical_ (creación de réplicas).
+  - Permite replicación síncrona. 🚨
+  - Es a nivel de _cluster de datos_.
+- Logical Replication (escalamiento vertical u horizontal).
+  - Modelo pub/sub.
+  - Logical Decoding + `pgoutput` plugin.
+  - Synchronous Slots (+17). (`CREATE SUBSCRIPTION... failover=true`).
+  - Permite publicar desde una réplica. (+16).
+- Logical Decoding
+  - Permite utilizar un plugin distinto (`test_decoding`, `wal2json`, ...).
+
+---
+
+# Soluciones de (o con) Alta Disponibilidad
+
+- Utilizan DCS (Distributed Consensus Service) para la elección de líder.
+  - [Patroni](https://github.com/patroni/patroni). 
+  - [Stolon](https://github.com/sorintlab/stolon). Incluye proxies.
+  - [pg_auto_failover](https://github.com/hapostgres/pg_auto_failover). Provee consenso propio.
+
+- [Yugabyte](https://docs.yugabyte.com/preview/yugabyte-platform/administer-yugabyte-platform/high-availability/). Replicación basada en protocolo RAFT.
+- Citus provee su mecanismo de HA a través de _working groups_.
+- [EDB Distributed](https://www.enterprisedb.com/docs/edb-postgres-ai/cloud-service/references/supported_cluster_types/distributed_highavailability/).
+  - Multi-master con Replicación Lógica. 
+
+---
+
+## Lab:[Patroni 101](https://github.com/3manuek/labs/tree/main/patroni)
 
 - HAproxy Entrypoint + checks
 - PgBouncer Pools
@@ -273,20 +300,23 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ---
 
-## Patroni Básico
+## Dentro de un nodo de Patroni
 
+![Patroni Node w:900px](./charts/downloads/postgres-patroni-basic-03.svg)
+
+---
+
+## Patroni Básico
 
 ![bg right:75% 70%](./charts/downloads/postgres-patroni-basic-01.svg)
 
 ---
 
-![Patroni w:900px](./charts/downloads/postgres-patroni-production-01.svg)
+# [Multi region Patroni and Consul](https://ongres.com/blog/improving-your-postgres-high-availability/)
 
 ---
 
-###### [Multi region Patroni and Consul](https://ongres.com/blog/improving-your-postgres-high-availability/)
-
-![bg right:80% 95%](./charts/downloads/patroni-consul-multiregion-01.svg)
+![Multi region with Consul DNS w:1000px](./charts/downloads/patroni-consul-multiregion-01.svg)
 
 ---
 
@@ -295,13 +325,12 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 - [TigerData Columnar Compression](https://www.tigerdata.com/blog/building-columnar-compression-in-a-row-oriented-database)
 - [Citus Columnar Storage](https://github.com/citusdata/citus/tree/main/src/backend/columnar)
   - [cstore_fdw](https://github.com/citusdata/cstore_fdw)
-- [Hydra](https://github.com/hydradatabase/columnar).
-- [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake)
-
+- [Hydra](https://github.com/hydradatabase/columnar)
+- [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake). Mirror a Apache Iceberg.
 
 ---
 
-# Respaldos
+# Respaldos (Físicos)
 
 - [pgBackRest](https://pgbackrest.org/)
   - Soporta paralelismo, incrementales, almacenamiento en Block Storage y reposiorios on-premise.
@@ -310,20 +339,35 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 - [Backup & Recovery](https://www.postgresql.org/docs/18/backup-recovery.html)
   - Respaldos _full_ or incrementales desde la versión 17.
 
+> Los respaldos físicos permiten recuperación en caso de desastre y levantar réplicas sin impactar otros nodos.
+
+--- 
+
+# Respaldos (Lógicos)
+
+- Buena práctica: Siempre tener respaldos lógicos con `pg_dump`.
+
+> Los respaldos lógicos son útiles para manipulación de datos, restauración en otros ambientes o para mover bases pequeñas.
+
 ---
 
-## Poolers
+## Balanceo o entrypoint
+
+- [pgpool-II](https://www.pgpool.net/): Pool, balanceo y clustering.
+- [HAProxy](https://www.haproxy.org/)
+- [Envoy](https://www.envoyproxy.io/): Soporta reporte de métricas de cada consulta. Open Telemetry.
+
+---
+
+## Poolers (Control de conexiones)
 
 - [PgBouncer](https://www.pgbouncer.org/): Single Thread, opción por defecto.
 - [pgcat](https://github.com/postgresml/pgcat): Soporta Sharding por Hash. 
 - [pgdog](https://pgdog.dev): Soporte de sharding por hash.
 - [Odyssey](https://github.com/yandex/odyssey)
-- AWS RDS Proxy
+- [ProxySQL](https://proxysql.com/): Soporta _query rewrite_.
+- AWS RDS Proxy. 
 
-## Balanceo
-- [pgpool-II](https://www.pgpool.net/): Pool, balanceo y clustering.
-- [HAProxy](https://www.haproxy.org/)
-- [Envoy](https://www.envoyproxy.io/): Soporta reporte de métricas de cada consulta. Open Telemetry.
 
 ---
 
@@ -332,18 +376,35 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 ![bg right:70% 80%](./charts/downloads/postgres-pooling-fleet-01.svg)
 
+---
+
+# [Timeouts de conexiones en cascada](https://tr3s.ma/posts/2024-10/pgbouncer/)
+
+<div class="container">
+  <div class="col">
+    <img src="./charts/downloads/postgres-pooling-fleet-03.svg" width="380px" alt="cascade diagram 03"/>
+  </div>
+  <div class="col">
+    <img src="./charts/downloads/postgres-pooling-fleet-02.svg" width="420px" alt="cascade diagram 02"/>
+  </div>
+</div>
 
 ---
 
-# Monitoreo
+# Monitoreo (1)
 
-## Clásico
-- [Prometheus](https://prometheus.io/) + [Grafana](https://grafana.com/) + [postgres_exporter](https://github.com/prometheus-community/postgres_exporter)
+- [Prometheus](https://prometheus.io/) + [Grafana](https://grafana.com/) + [postgres_exporter](https://github.com/prometheus-community/postgres_exporter).
 - [Open Telemetry](https://opentelemetry.io/)
-- [pgAnalyze](https://pganalyze.com/)
+- [pgAnalyze](https://pganalyze.com/). Recomendación de índices 👌🏻.
 - [Percona Monitoring and Management](https://www.percona.com/software/database-tools/percona-monitoring-and-management)
+- Ejemplo de [Logs Distribuidos en StackGres](https://stackgres.io/doc/1.5/administration/distributed-logs/).
+
+---
+
+# Monitoreo (2)
 
 ## eBPF
+
 - [Cilium / Cloud Native Operator](https://cloudnative-pg.io/documentation/1.27/cncf-projects/cilium/)
 - [eBPF pgtracer](https://github.com/Aiven-Open/pgtracer)
 
@@ -379,6 +440,7 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 
 
 ---
+
 # ETL, extracción
 
 - [etl by Supabase](https://github.com/supabase/etl)
@@ -418,35 +480,68 @@ SELECT create_distributed_index('campaigns', 'id');
 ```
 
 ---
+<!-- _backgroundColor: black -->
 
-# _Seamless_ Upgrades
+# 🚧 Upgrades
 
-* Con snapshot:
-    * Create snapshot and take the LSN (Logical Sequence Number).
+---
+
+## _Seamless_ Upgrades (Fase de Upgrade)
+
+* Con snapshot+LR (ideal para clústeres "grandes"):
+    * Crear (cluster) snapshot, tomar el LSN (Logical Sequence Number) del cluster restaurado y aplicar `pg_upgrade` (o `modify-db-cluster` en RDS/Aurora).
     * Configurar LR con el LSN desde Origin -> Destination cluster.
+      * ```
+        roname=$(psql_destination "
+        SELECT 'pg_'||oid::text
+        FROM pg_subscription 
+        WHERE subname = '${SUBSCRIPTION_NAME}';")
+        ```
+      * En PG vanilla: `LSN=$(psql -c "SELECT pg_current_wal_lsn();")`
+      * En Aurora: `LSN=$(psql -c "SELECT aurora_volume_logical_start_lsn();")`
+      * `SELECT pg_replication_origin_advance('${roname}', '<LSN>');`
+
+---
+
+## Lab:[Upgrade con LR "plano"](https://github.com/3manuek/labs/tree/main/logical_replication)
+
 * Con Logical Replication:
-    * Crear LR con `copy_data = true`.
-    * Recomendado `disable_on_error` y `streaming=on`.
-* `PAUSE`/Configuración Pool/`RESUME` en PgBouncer.
+  * Crear LR con `copy_data = true`.
+  * Recomendado `disable_on_error` y `streaming=on`.
+  * ⚠️ WARNING: Cuidado con extensiones que actualizan metadatos, como Postgis. Usar publicaciones con definición expandida. 
+
+---
+
+## Fase de Switchover
+
+* Requiere una capa de pooling que permita controlar las conexiones.
+* Flow:
+  * `PAUSE`
+  * Configuración Pool (ej. sección de `databases` en pgbouncer).
+  * Drain active connections y **lag=0**.
+  * `RESUME` en PgBouncer.
 * [Upgrades con LR](https://www.postgresql.org/docs/current/logical-replication-upgrade.html)
 
 ---
 
-# Limitaciones en Upgrades
+# Limitaciones y consideraciones en Upgrades
 
+- <v17: `ANALYZE` antes del switchover.
 - Conexiones directas al cluster de origen tienen que ser paradas y redirigidas.
 - Ciertas extensiones, como Postgis, tienen tablas de metadatos que tienen que ser excluídas.
 - Las versiones de las extensiones en destino tienen que ser actualizadas si se utiliza un snapshot+LR.
+- `track_commit_timestamp` habilitado es muy útil para debuguear, pero 1) agrega cierto overhead y 2) pierde su utilidad cuando se usa `streaming=parallel`. 
 
 ---
 
-# Operadores / Soluciones integradas
+# Operadores k8s / Soluciones integradas
 
 * [Cloud Native PostgreSQL](https://cloudnative-pg.io/)
 * [Crunchy Data](https://www.crunchydata.com/)
+* [Zalando](https://github.com/zalando/postgres-operator)
+* [StackGres](https://www.stackgres.io/)
 * [Neon](https://neon.tech/)
 * [Pigsty](https://pigsty.io)
-* [StackGres](https://www.stackgres.io/)
 * [Omnigres](https://omnigres.com/)
 
 ---
@@ -496,7 +591,17 @@ Links y extensiones relevantes:
 
 # ¡Gracias!
 
-<br/>
+<div class="container">
+  <div class="col">
+    <img src="./assets/careers.png" width="380px" alt="cascade diagram 03"/>
+  </div>
+  <div class="col">
+    <ul>
+      <li><a href="https://www.workato.com/careers">Workato careers</a></li>
+      <li><a href="https://grnh.se/4phjde292us">Senior Infrastructure Engineer (ML/AI)</a></li>
+      <li><a href="https://grnh.se/n0cahuda2us">Senior Infrastructure Engineer (Core Infra - Sec/Net)</a></li>
+      <li><a href="https://grnh.se/ngt9btq22us">Senior Infrastructure Engineer (Core Infra)</a></li>
+    </ul>
+  </div>
+</div>
 
-[Workato careers](https://www.workato.com/careers) 
-![workato careers w:300px](./assets/careers.png) 

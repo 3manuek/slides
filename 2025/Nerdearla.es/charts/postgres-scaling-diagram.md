@@ -2,25 +2,23 @@
 
 ## Mindmap
 
+
+
 ```mermaid
 mindmap
   root(Escalamiento)
     Vertical((Vertical))
       AIO
-      Mejoras Vacuum
       Particionado
       UUIDv7 
-      Streaming Replication
-      Pooling de conexiones
-      Extensiones
-        OrioleDB
+      Replicas
+      Pool Connections
       Skip Scan en índices
       Columnar Storage
         Citus
       Storage(Storage)
         RAID
-          NVMe
-          SSD
+          NVMe/SSD
         ZFS
     Horizontal((Horizontal))  
       Logical Replication
@@ -28,7 +26,7 @@ mindmap
       Bi-directional Logical Replication
       Sharding(Sharding)
         Citus
-        Custom Sharding con FDWs
+        Custom Sharding
       Foreign Data Wrappers
 ```
 
