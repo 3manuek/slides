@@ -10,8 +10,7 @@ graph TB
     end
 
     subgraph "Load Balancer Options"
-        Envoy[Envoy Proxy<br/>Write: :5432<br/>Read: :5433]
-        HAProxy[HAProxy Alternative<br/>Write: :5432<br/>Read: :5433]
+        PROXY[Envoy Proxy<br/>HAProxy<br/>Write: :5432<br/>Read: :5433]
     end
 
 
@@ -21,11 +20,19 @@ graph TB
                 PGBW1[PgBouncer Write 1]
                 PGBW2[PgBouncer Write 2]
                 PGBW3[PgBouncer Write N]
+                PGBEXPORTERRW[pgbouncer_exporter]
+                PGBW1 --> PGBEXPORTERRW
+                PGBW2 --> PGBEXPORTERRW
+                PGBW3 --> PGBEXPORTERRW
             end
             subgraph "Read Pool"
                 PGBR1[PgBouncer Read 1]
                 PGBR2[PgBouncer Read 2]
                 PGBR3[PgBouncer Read N]
+                PGBEXPORTERRO[pgbouncer_exporter]
+                PGBR1 --> PGBEXPORTERRO
+                PGBR2 --> PGBEXPORTERRO
+                PGBR3 --> PGBEXPORTERRO
             end
         end
 
@@ -37,25 +44,23 @@ graph TB
             subgraph "Patroni Node"
               PAT1["Patroni Primary"]
               EXPORTER1[postgres_exporter<br/>node_exporter]
+              BACKUP1[pgBackRest/WAL-G<br/>Backup Server]
             end
             subgraph "Patroni Node"
               PAT2["Patroni Replica"]
               EXPORTER2[postgres_exporter<br/>node_exporter]
+              BACKUP2[pgBackRest/WAL-G<br/>Backup Server]
             end
             subgraph "Patroni Node"
              PAT3["Patroni Replica"]
               EXPORTER3[postgres_exporter<br/>node_exporter]
+              BACKUP3[pgBackRest/WAL-G<br/>Backup Server]
             end
         end
 
-        subgraph "Backup & Recovery"
-          BACKUP[pgBackRest/WAL-G<br/>Backup Server]
-        end
-        PGBEXPORTER[pgbouncer_exporter]
     end
 
-
-    S3[(S3/Object Storage<br/>WAL Archives<br/>Base Backups)]
+    S3[(Object Storage<br/>WAL Archives<br/>Base Backups)]
 
     subgraph "Monitoring Stack"
         PROM[Prometheus<br/>Metrics Collection]
@@ -63,23 +68,16 @@ graph TB
     end
 
     %% Client to LB
-    WC -->|Write Traffic| Envoy
-    WC -.->|Alternative| HAProxy
-    RC -->|Read Traffic| Envoy
-    RC -.->|Alternative| HAProxy
+    WC -->|Write Traffic| PROXY
+    RC -->|Read Traffic| PROXY
 
     %% LB to PgBouncer
-    Envoy -->|Write Port| PGBW1
-    Envoy -->|Write Port| PGBW2
-    Envoy -->|Write Port| PGBW3
-    Envoy -->|Read Port| PGBR1
-    Envoy -->|Read Port| PGBR2
-    Envoy -->|Read Port| PGBR3
-
-    HAProxy -.->|Write Port| PGBW1
-    HAProxy -.->|Write Port| PGBW2
-    HAProxy -.->|Read Port| PGBR1
-    HAProxy -.->|Read Port| PGBR2
+    PROXY -->|Write Port| PGBW1
+    PROXY -->|Write Port| PGBW2
+    PROXY -->|Write Port| PGBW3
+    PROXY -->|Read Port| PGBR1
+    PROXY -->|Read Port| PGBR2
+    PROXY -->|Read Port| PGBR3
 
     %% Write PgBouncers to Primary
     PGBW1 --> PAT1
@@ -104,23 +102,20 @@ graph TB
     PAT3 <-->|Monitor Leader<br/>Health Checks| DCS
 
     %% Backup
-    PAT1 -->|WAL Shipping| BACKUP
-    PAT2 -.->|Optional<br/>Backup Source| BACKUP
-    BACKUP --> S3
-    BACKUP -.->|PITR Restore| PAT1
+    PAT1 -->|WAL Shipping| BACKUP1
+    BACKUP1 --> S3
+    S3 -.->|PITR Restore| BACKUP2
 
     %% Monitoring
     PAT1 --> EXPORTER1
     PAT2 --> EXPORTER2
     PAT3 --> EXPORTER3
-    PGBW1 --> PGBEXPORTER
-    PGBR1 --> PGBEXPORTER
-
 
     EXPORTER1 -->|/metrics| PROM
     EXPORTER2 -->|/metrics| PROM
     EXPORTER3 -->|/metrics| PROM
-    PGBEXPORTER --> PROM
+    PGBEXPORTERRW --> PROM
+    PGBEXPORTERRO --> PROM
     DCS -->|etcd metrics| PROM
 
     PROM --> GRAF
@@ -128,11 +123,12 @@ graph TB
     style PAT1 fill:#2ecc71,stroke:#27ae60,stroke-width:3px
     style PAT2 fill:#3498db,stroke:#2980b9,stroke-width:2px
     style PAT3 fill:#3498db,stroke:#2980b9,stroke-width:2px
-    style Envoy fill:#9b59b6,stroke:#8e44ad,stroke-width:3px
-    style HAProxy fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,stroke-dasharray: 5 5
+    style PROXY fill:#9b59b6,stroke:#8e44ad,stroke-width:3px
     style DCS fill:#e74c3c,stroke:#c0392b,stroke-width:2px
     style S3 fill:#f39c12,stroke:#d68910,stroke-width:2px
-    style BACKUP fill:#f39c12,stroke:#d68910,stroke-width:2px
+    style BACKUP1 fill:#f39c12,stroke:#d68910,stroke-width:2px
+    style BACKUP2 fill:#f39c12,stroke:#d68910,stroke-width:2px
+    style BACKUP3 fill:#f39c12,stroke:#d68910,stroke-width:2px
     style PROM fill:#e67e22,stroke:#ca6f1e,stroke-width:2px
     style GRAF fill:#e67e22,stroke:#ca6f1e,stroke-width:2px
 ```

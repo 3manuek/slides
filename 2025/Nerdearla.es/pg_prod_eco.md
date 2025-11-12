@@ -67,9 +67,9 @@ _class: lead
 
 ![bg left:30% 80% drop-shadow](./assets/profile.jpg)
 
-> _Staff Infrastructure Engineer at [Workato](https://www.workato.com/)_ ![w:80px](./assets/workato.svg) 
-
-> **Database/Infrastructure Engineering.**
+> _Staff Infrastructure Engineer at [Workato](https://www.workato.com/)_  
+![w:80px](./assets/workato.svg) 
+> **Database/Infrastructure Engineering. Consultor independiente.**
 Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 
 
@@ -155,7 +155,7 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 | Desarrollo de APIs | [PostgREST](https://github.com/PostgREST/postgrest), [Prest](https://github.com/prest/prest) |
 | Time Series | [TigerData (TimescaleDB)](https://tigerdata.com) |
 | Spatial | [PostGIS](https://postgis.net/) |
-| Materialized Views | [Epsio](https://docs.epsio.io)| 
+| _Live_ Materialized Views | [Epsio](https://docs.epsio.io)| 
 
 ---
 
@@ -188,7 +188,7 @@ Anteriores compañías: OnGres, Percona, Pythian, 2ndQuadrant, entre otras.
 
 
 - **⚠️** | **Asynchronous I/O (AIO)** provee un estimado de 2/3x en mejora de rendimiento. [io_uring/liburing support commit](https://github.com/postgres/postgres/commit/c325a7633fcb33dbd73f46ddbbe91e95ddf3b227)
-  - Impacta en lecturas secuenciales y bitmap scans, además de una significativa mejora en el rendimiento de VACUUM.
+  - Impacta en lecturas secuenciales y bitmap scans, además de una significativa mejora en el rendimiento de VACUUM. [No siempre es mejor tenerlo activado](https://vondra.me/posts/tuning-aio-in-postgresql-18/).
   - Valores de `io_method ` pueden ser: `worker`, `sync`, `io_uring`. Número de _workers_ controlado en `io_workers`.
   - Monitoreo de Operaciones de IO: `pg_aios`.  
   - Cálculos CRC32 con una mejora de rendimiento desde **0.5x** a **3x** en instrucciones AVX-512  (AMD e Intel) para cálculo de rutas. [Article](https://www.phoronix.com/news/PostgreSQL-CRC32C-AVX512)
@@ -377,6 +377,13 @@ NOTICE:  os_page_count=32768 os_page_size=4096 pages_per_blk=2.000000
 - [Desde versión 16](https://www.highgo.ca/2023/12/18/new-in-postgresql-16-bi-directional-logical-replication/)
 - [BDR](https://www.enterprisedb.com/docs/pgd/4/bdr/)
 
+
+---
+# ETL, extracción
+
+- [etl by Supabase](https://github.com/supabase/etl)
+- [dbt](https://www.dbt.com/)
+
 ---
 
 ## ↔️ [Sharding por Hash con pgcat](https://tr3s.ma/posts/2025-01/pgcat/)
@@ -423,6 +430,13 @@ SELECT create_distributed_index('campaigns', 'id');
 * `PAUSE`/Configuración Pool/`RESUME` en PgBouncer.
 * [Upgrades con LR](https://www.postgresql.org/docs/current/logical-replication-upgrade.html)
 
+---
+
+# Limitaciones en Upgrades
+
+- Conexiones directas al cluster de origen tienen que ser paradas y redirigidas.
+- Ciertas extensiones, como Postgis, tienen tablas de metadatos que tienen que ser excluídas.
+- Las versiones de las extensiones en destino tienen que ser actualizadas si se utiliza un snapshot+LR.
 
 ---
 

@@ -17,6 +17,11 @@ mindmap
       Skip Scan en índices
       Columnar Storage
         Citus
+      Storage(Storage)
+        RAID
+          NVMe
+          SSD
+        ZFS
     Horizontal((Horizontal))  
       Logical Replication
         LR desde Réplicas
