@@ -15,7 +15,7 @@ mindmap
       Pool Connections
       Skip Scan en índices
       Columnar Storage
-        Citus
+        cstore_fdw
       Storage(Storage)
         RAID
           NVMe/SSD
